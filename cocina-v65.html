@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#061827"><title>Cocina Misión 65 · Comparación de diseño</title>
+<style>
+:root{font:16px system-ui,-apple-system,Segoe UI,Arial,sans-serif;color-scheme:dark;--bg:#071827;--txt:#f3fcff}
+*{box-sizing:border-box}html,body{margin:0;max-width:100%;overflow-x:hidden}body{color:var(--txt);background:radial-gradient(ellipse at top,#1b405b,var(--bg) 75%)}main{max-width:1500px;margin:auto;padding:clamp(12px,2vw,28px)}
+h1{font-size:clamp(25px,3.6vw,42px);margin:5px 0;color:#6ce7ff;line-height:1.15}h2{font-size:clamp(20px,2.5vw,25px);margin:0}p{line-height:1.5}
+header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;margin-bottom:16px}header p{color:#c9e2eb;margin:7px 0}
+.tag{border:1px solid #66cde9;border-radius:50px;padding:10px 13px;font-weight:850;font-size:12px}
+.notice{padding:13px 15px;border-radius:11px;background:#3d301b;border-left:5px solid #ffd076;color:#ffedce;margin:15px 0}
+.comparison{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0 18px}.comparison a{color:#cff6ff;text-decoration:none;border:1px solid #4a8ba3;border-radius:10px;padding:10px 12px;background:#123447;font-weight:700}.comparison a.current{color:#05222d;background:#6ce7ff}
+.panel{border:1px solid #37748d;border-radius:18px;background:#0b2c42;padding:clamp(13px,2vw,20px)}
+.toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 18px;align-items:center}
+.filters,.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.controls{justify-content:flex-end}
+button{font:750 15px system-ui;min-height:46px;cursor:pointer;border:1px solid #67cfe9;border-radius:10px;background:#1f4a62;color:#fff;padding:10px 14px}
+button.selected{color:#05202a;background:#5bdef3}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #ffe49d;outline-offset:2px}
+.controls label{display:flex;align-items:center;gap:8px;font-weight:700}.controls input{accent-color:#64e6ff;width:115px;max-width:100%}
+#message{min-height:23px;color:#c9f7ee;margin:15px 0 5px}.summary{font-weight:850;color:#9effd8;font-size:17px;margin:8px 0 16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,345px),1fr));gap:15px}
+.card{--accent:#49c7ff;--shade:#10364e;--shade2:#123e58;border:2px solid var(--accent);border-left:11px solid var(--accent);border-radius:18px;padding:18px;background:linear-gradient(140deg,var(--shade2),var(--shade));box-shadow:0 8px 28px #0003;min-width:0}
+.card.delivery{--accent:#45f0a4;--shade:#092c28;--shade2:#144638}
+.card.pickup{--accent:#ff6a83;--shade:#3c1c2b;--shade2:#55243b}
+.card.mesa{--accent:#52c5ff;--shade:#0d2f4e;--shade2:#124360}
+.head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;flex-wrap:wrap}.head h3{font-size:clamp(23px,2.8vw,29px);margin:0}.status{border-radius:30px;background:#ffffff24;border:1px solid #ffffff3d;padding:6px 11px;font-size:13px;font-weight:800}
+.kind{display:flex;align-items:center;gap:11px;font-size:clamp(19px,2vw,23px);font-weight:900;color:var(--accent);margin:16px 0 12px}
+.light{width:22px;height:22px;flex:none;border-radius:50%;background:var(--accent);box-shadow:0 0 4px var(--accent),0 0 20px var(--accent)}
+.timebox{border-radius:15px;padding:14px 15px;background:#061b27a9;border:1px solid #ffffff45;margin-bottom:14px}
+.time-label{font-size:13px;color:#c3dce8;font-weight:750}.time{font-size:clamp(29px,4vw,44px);letter-spacing:1px;font-weight:950;font-variant-numeric:tabular-nums;line-height:1.35;color:#a8ffd3}
+.time.warn{color:#ffe48e}.time.late{color:#ff9da7}.time.done{color:#b1e0ef}
+.items{background:#03192365;border-radius:12px;padding:12px 14px}.item+.item{border-top:1px solid #ffffff39;margin-top:10px;padding-top:10px}.item b{font-size:19px}.item small{color:#d0e7ee;display:block;margin-top:5px;font-size:15px}
+.ready{width:100%;background:var(--accent);color:#061e27;font-weight:900;font-size:18px;border-color:var(--accent);margin-top:16px;min-height:56px}
+#history{margin-top:20px}details{margin-top:19px;border-top:1px solid #376d87;padding-top:15px}summary{cursor:pointer;font-weight:850}#historyList{color:#d7eef7}
+a{color:#88efff}.foot{font-size:13px;color:#bad7e3;margin-top:20px}
+@media(max-width:1150px){.toolbar{grid-template-columns:1fr}.controls{justify-content:flex-start}.controls>*{flex:0 1 auto}}
+@media(max-width:620px){main{padding:12px 10px}.panel{padding:12px}.filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.filters button{padding:9px 4px;font-size:13px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}.controls button{padding:8px;font-size:13px}.controls label{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(60px,1fr) auto}.controls input{width:100%}.cards{grid-template-columns:minmax(0,1fr)}.card{padding:14px}.comparison{gap:6px}.comparison a{font-size:12px;padding:9px}.time{font-size:36px}}
+</style></head><body><main>
+<header><div><div class="tag" style="display:inline-block">🧪 MISIÓN 65 · TERCER DISEÑO</div><h1>👨‍🍳 Cocina · Hot-Dog Las Vías</h1><p>Comandas sin precios · tiempo visible desde que llegó cada pedido</p></div></header>
+<div class="notice"><strong>SOLO DEMOSTRACIÓN:</strong> los pedidos son ficticios. No hay conexión a Render, Netlify, Caja, GPS ni Epson. Los datos se reinician al recargar.</div>
+<nav class="comparison" aria-label="Comparar versiones"><strong>Comparar:</strong><a href="./cocina-v64-original.html">1 · Cocina 64</a><a href="./cocina-v64b.html">2 · Cocina 64B</a><a class="current" aria-current="page" href="./cocina-v65.html">3 · Nueva Cocina 65</a></nav>
+<section class="panel">
+<div class="toolbar"><div class="filters" id="filters"><button data-filter="pending" class="selected">Pendientes</button><button data-filter="all">Todos</button><button data-filter="ready">Listos</button></div>
+<div class="controls"><button id="sound">🔕 Sonido apagado</button><label>Volumen <input type="range" id="vol" min="20" max="100" value="75"><output id="volText">75%</output></label><button id="test">▶ Campanillas</button><button id="reset">↻ Reiniciar</button></div></div>
+<p id="message" role="status" aria-live="polite">Prueba los botones con pedidos de ejemplo.</p><div id="summary" class="summary"></div><div id="cards" class="cards"></div>
+<details id="history"><summary>📋 Historial de listos (<span id="historyCount">0</span>)</summary><div id="historyList"></div></details>
+</section><p class="foot">Los colores de la ventana identifican el pedido: 🟢 Domicilio · 🔴 Recoger · 🔵 Mesa. El reloj empieza al registrar cada pedido y se detiene en Listo. Verde: menos de 10 min; amarillo: 10–19 min; rojo: 20 min o más.</p>
+<p><a href="./index.html">← Regresar al menú del laboratorio</a></p>
+</main><script>
+(()=>{'use strict';const $=id=>document.getElementById(id);
+const original=[
+{id:'DEMO-101',type:'delivery',label:'Servicio a domicilio',elapsed:8*60+25,items:[{qty:2,name:'Hotdog sencillo',detail:'Con todo'},{qty:1,name:'Coca-Cola',detail:'Normal'}]},
+{id:'DEMO-102',type:'pickup',label:'Ordene y recoja',elapsed:12*60+35,items:[{qty:1,name:'Salchipapas',detail:'Sin cebolla'},{qty:1,name:'Agua fresca',detail:'Jamaica'}]},
+{id:'MESA-1',type:'mesa',label:'Consumo en Mesa 1',elapsed:21*60+10,items:[{qty:1,name:'Hamburguesa',detail:'Sin tomate'},{qty:2,name:'Hotdog sencillo',detail:'Con todo'}]}];
+let orders=[],filter='pending',sound=false,audio=null;
+const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function seconds(o){return Math.max(0,Math.floor(((o.finishedAt??Date.now())-o.startedAt)/1000))}
+function timeText(o){const s=seconds(o);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function timeClass(o){return o.state==='listo'?'done':seconds(o)>=1200?'late':seconds(o)>=600?'warn':''}
+function card(o){return '<article class="card '+o.type+'"><div class="head"><h3>#'+safe(o.id)+'</h3><span class="status">'+(o.state==='listo'?'✅ Listo':'👨‍🍳 Preparando')+'</span></div><div class="kind"><span class="light"></span>'+safe(o.label)+'</div><div class="timebox"><div class="time-label">'+(o.state==='listo'?'TIEMPO TOTAL DE PREPARACIÓN':'TIEMPO DESDE QUE ENTRÓ EL PEDIDO')+'</div><div data-clock="'+safe(o.id)+'" class="time '+timeClass(o)+'">'+timeText(o)+' <span style="font-size:14px">min</span></div></div><div class="items">'+o.items.map(i=>'<div class="item"><b>'+i.qty+' × '+safe(i.name)+'</b><small>'+safe(i.detail)+'</small></div>').join('')+'</div>'+(o.state==='listo'?'':'<button class="ready" data-ready="'+safe(o.id)+'">✅ Marcar listo</button>')+'</article>'}
+function render(){document.querySelectorAll('[data-filter]').forEach(b=>{let yes=b.dataset.filter===filter;b.classList.toggle('selected',yes);b.setAttribute('aria-pressed',String(yes))});const selected=orders.filter(o=>filter==='all'||(filter==='ready'?o.state==='listo':o.state!=='listo'));$('cards').innerHTML=selected.length?selected.map(card).join(''):'<p>No hay pedidos en esta sección.</p>';$('summary').textContent=orders.filter(o=>o.state!=='listo').length+' pedidos pendientes · '+orders.length+' pedidos ficticios';const done=orders.filter(o=>o.state==='listo');$('historyCount').textContent=done.length;$('historyList').innerHTML=done.map(o=>'<p>✅ #'+safe(o.id)+' · '+safe(o.label)+' · '+timeText(o)+' min</p>').join('')||'<p>Sin pedidos terminados.</p>'}
+function updateClocks(){document.querySelectorAll('[data-clock]').forEach(el=>{const o=orders.find(o=>o.id===el.dataset.clock);if(!o)return;el.className='time '+timeClass(o);el.innerHTML=timeText(o)+' <span style="font-size:14px">min</span>'})}
+function bell(force=false){if(!force&&!sound)return;try{audio=audio||new(window.AudioContext||window.webkitAudioContext)();audio.resume();const start=audio.currentTime+.025,vol=+$('vol').value/100;[784,988,1318,988,1318].forEach((f,i)=>{const osc=audio.createOscillator(),gain=audio.createGain(),at=start+i*.16;osc.type='sine';osc.frequency.value=f;gain.gain.setValueAtTime(.0001,at);gain.gain.exponentialRampToValueAtTime(Math.max(.0005,vol*.09),at+.02);gain.gain.exponentialRampToValueAtTime(.0001,at+.43);osc.connect(gain);gain.connect(audio.destination);osc.start(at);osc.stop(at+.46)})}catch(e){$('message').textContent='El navegador no permitió reproducir el sonido.'}}
+function reset(){orders=original.map(x=>({...x,items:x.items.map(i=>({...i})),startedAt:Date.now()-x.elapsed*1000,state:'preparando',finishedAt:null}));filter='pending';$('message').textContent='Se reiniciaron los pedidos ficticios.';render()}
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});
+document.addEventListener('click',e=>{const button=e.target.closest('[data-ready]');if(!button)return;const o=orders.find(o=>o.id===button.dataset.ready);if(o&&o.state!=='listo'){o.state='listo';o.finishedAt=Date.now();$('message').textContent='✅ '+o.id+' marcado como listo. Prueba local.';bell();render()}});
+$('sound').onclick=()=>{sound=!sound;$('sound').textContent=sound?'🔔 Sonido activado':'🔕 Sonido apagado';$('sound').setAttribute('aria-pressed',String(sound));if(sound)bell()};$('test').onclick=()=>bell(true);$('reset').onclick=reset;$('vol').oninput=()=>{$('volText').textContent=$('vol').value+'%'};setInterval(updateClocks,1000);reset();
+})();
+</script></body></html>
