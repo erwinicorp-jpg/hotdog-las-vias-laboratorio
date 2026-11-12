@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#071728">
+<title>Hot-Dog Las Vías · Laboratorio seguro</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color-scheme:dark;background:#06121e;color:#edfaff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#14364d,#06121e 70%);min-height:100vh}
+main{max-width:1050px;margin:auto;padding:20px clamp(12px,3vw,30px) 90px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}h1{font-size:clamp(24px,5vw,40px);margin:.2em 0;color:#57e7ff}h2{margin:0 0 12px;font-size:23px}
+p{line-height:1.5}.muted{color:#b7d5e1}.notice{background:#493317;border-left:5px solid #ffcb69;padding:14px;border-radius:12px;margin:18px 0}
+.panel{background:#0d293b;border:1px solid #2f748d;border-radius:18px;padding:clamp(14px,3vw,22px);margin:16px 0}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.item{background:#12364b;border:1px solid #335f75;border-radius:14px;padding:15px;display:flex;flex-direction:column;gap:9px}
+.item strong{font-size:20px}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+button,select,input{font:inherit;border-radius:11px;padding:11px 12px}button{cursor:pointer;font-weight:750;border:1px solid #7ee6f3;background:#07c9e6;color:#062333;min-height:46px}
+button.secondary{background:#24475c;color:#fff}button:focus-visible,input:focus-visible{outline:3px solid #ffe18d;outline-offset:2px}
+select,input{max-width:100%;background:#061e30;color:#fff;border:1px solid #4b8ba5}
+.qty{width:70px}.tag{font-size:12px;background:#1d5347;border-radius:99px;padding:7px 10px;color:#b4ffe3;font-weight:800}
+table{width:100%;border-collapse:collapse}td,th{padding:12px 7px;text-align:left;border-bottom:1px solid #31576d}td:last-child,th:last-child{text-align:right}
+.total{font-size:24px;font-weight:850;color:#7bf2d4}.empty{padding:18px;color:#c4dce6;text-align:center}
+.action{background:#2e4552;color:#d2e1e6;border-color:#78919f}footer{padding:28px 0;color:#a9c8d5;font-size:13px}
+@media(max-width:540px){main{padding-top:12px}.products{grid-template-columns:1fr}td,th{font-size:14px}}
+</style></head><body><main>
+<header><div><span class="tag">🧪 MISIÓN 63 · DEMO LOCAL</span><h1>🌭 Hot-Dog Las Vías</h1><p class="muted">Laboratorio de menú · compatible con tablet y teléfono</p></div><span>🔒 Sin conexión a ventas</span></header>
+<div class="notice"><strong>PRUEBA SEGURA:</strong> esta página no envía pedidos a WhatsApp, Render ni Netlify; no registra cobros, no utiliza GPS ni activa la impresora Epson. Los datos del carrito desaparecen al recargar.</div>
+<section class="panel"><h2>🛍️ Modalidad de pedido (simulada)</h2><div class="row"><label><input type="radio" name="tipo" value="delivery" checked> 🛵 Domicilio</label><label><input type="radio" name="tipo" value="pickup"> 🛍️ Ordena y recoge</label><label><input type="radio" name="tipo" value="mesa"> 🍽️ Mesa</label></div></section>
+<section class="panel"><h2>🍽️ Menú de prueba</h2><div id="productos" class="products"></div></section>
+<section class="panel"><h2>🛒 Carrito de demostración</h2><div id="carrito" aria-live="polite"></div><div class="row"><span>Total simulado</span><span class="total" id="total">$0</span></div><p class="muted" id="modalidad"></p><div class="row"><button class="secondary" id="vaciar">Vaciar carrito</button><button class="action" disabled>⛔ Envío real desactivado</button></div></section>
+<section class="panel"><h2>👨‍🍳 Cocina y Caja</h2><p>Los módulos de cocina, cobros, notificaciones, seguimiento GPS e impresión Epson se integrarán en Render tras comprobar sus archivos. Esta demo no tiene acceso al sistema real.</p></section>
+<footer>Hot-Dog Las Vías · Laboratorio aislado · No aceptar pedidos desde esta página.</footer>
+</main><script>
+(()=>{'use strict';
+const catalogo=[
+{nombre:'Hotdog sencillo',precio:25,opciones:['Con todo','Natural','Solo mayonesa','Sin cebolla','Sin mostaza','Sin catsup']},
+{nombre:'Hotdog con papas',precio:50,opciones:['Con todo','Natural','Sin cebolla']},
+{nombre:'Combo de 2 hotdogs',precio:70,opciones:['Con todo','Natural']},
+{nombre:'Hamburguesa',precio:70,opciones:['Con todo','Sin cebolla','Sin tomate','Sin lechuga','Sin mayonesa']},
+{nombre:'Salchipapas',precio:50,opciones:['Con todo','Sin cebolla']},
+{nombre:'Orden de papas',precio:25,opciones:['Normal']},
+{nombre:'Agua fresca',precio:30,opciones:['Jamaica','Piña','Cebada','Horchata']},
+{nombre:'Coca-Cola',precio:30,opciones:['Normal']}
+];
+const $=id=>document.getElementById(id),items=[];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+$('productos').innerHTML=catalogo.map((p,i)=>'<article class="item"><strong>'+esc(p.nombre)+'</strong><span class="muted">$'+p.precio+' MXN</span><label>Preparación <select id="op'+i+'">'+p.opciones.map(o=>'<option>'+esc(o)+'</option>').join('')+'</select></label><div class="row"><label>Cant. <input class="qty" id="q'+i+'" type="number" min="1" max="25" value="1" inputmode="numeric"></label><button data-add="'+i+'">Agregar +</button></div></article>').join('');
+function render(){
+$('carrito').innerHTML=items.length?'<table><thead><tr><th>Producto</th><th>Cant.</th><th>Precio</th></tr></thead><tbody>'+items.map((x,i)=>'<tr><td>'+esc(x.nombre)+'<div class="muted">'+esc(x.opcion)+'</div><button class="secondary" data-remove="'+i+'">Eliminar</button></td><td>'+x.cantidad+'</td><td>$'+(x.precio*x.cantidad)+'</td></tr>').join('')+'</tbody></table>':'<div class="empty">Todavía no agregaste productos de prueba.</div>';
+const mode=document.querySelector('input[name="tipo"]:checked').value;
+const envio=mode==='delivery'&&items.length?15:0;
+$('total').textContent='$'+(items.reduce((s,x)=>s+x.precio*x.cantidad,0)+envio);
+$('modalidad').textContent=mode==='delivery'?'Domicilio de prueba: +$15 de envío; sin solicitud de ubicación.':mode==='pickup'?'Ordena y recoge: sin costo de envío.':'Mesa: sin costo de envío.';
+}
+document.addEventListener('click',e=>{const a=e.target.closest('[data-add]'),r=e.target.closest('[data-remove]');
+if(a){const i=+a.dataset.add,p=catalogo[i],cantidad=+$('q'+i).value;if(!Number.isInteger(cantidad)||cantidad<1||cantidad>25)return alert('Ingresa una cantidad de 1 a 25.');items.push({nombre:p.nombre,precio:p.precio,cantidad,opcion:$('op'+i).value});$('q'+i).value=1;render();}
+if(r){items.splice(+r.dataset.remove,1);render();}
+});
+document.querySelectorAll('input[name="tipo"]').forEach(x=>x.addEventListener('change',render));
+$('vaciar').addEventListener('click',()=>{items.length=0;render()});render();
+})();
+</script></body></html>
