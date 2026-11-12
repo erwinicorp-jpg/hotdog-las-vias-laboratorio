@@ -1,0 +1,63 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Cocina · Hot-Dog Las Vías · Misión 64</title>
+<style>
+:root{font:16px system-ui,Arial,sans-serif;color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#17415d,#061522 75%);color:#effaff}main{max-width:1380px;margin:auto;padding:clamp(12px,2vw,26px)}h1{font-size:clamp(25px,4vw,38px);color:#65e6ff;margin:0}h2{font-size:23px;margin:0}p{color:#bdd7e5;line-height:1.5}header,.bar,.row,.tools{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}header{margin-bottom:19px}.pill{border:1px solid #65d8eb;border-radius:99px;padding:9px 13px;font-weight:bold;font-size:13px}.warning{background:#473617;border-left:5px solid #ffcb62;padding:15px;border-radius:11px}.panel{margin:16px 0;background:#0d2d42;border:1px solid #387d98;border-radius:17px;padding:clamp(13px,2vw,20px)}button{font:800 16px system-ui;cursor:pointer;min-height:45px;padding:10px 14px;border:1px solid #70cee8;border-radius:11px;background:#24516b;color:#fff}button.active{background:#44d8ee;color:#072835}button.done{background:#39dfbb;color:#032b2a;width:100%;margin-top:12px}button:disabled{opacity:.55;cursor:default}button:focus-visible,input:focus-visible{outline:3px solid #ffe79e;outline-offset:2px}.tools{justify-content:flex-end}input[type=range]{accent-color:#3fdbf4;width:120px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,335px),1fr));gap:14px;margin-top:16px}.ticket{--accent:#4dc4ff;background:#092638;border:1px solid var(--accent);border-left:8px solid var(--accent);border-radius:16px;padding:16px}.ticket.delivery{--accent:#3de6a1}.ticket.pickup{--accent:#ff667e}.ticket.mesa{--accent:#42c2ff}.ticket h3{margin:0;font-size:clamp(20px,2vw,25px)}.state{font-size:12px;padding:7px 11px;border-radius:99px;background:#28516a}.kind{display:flex;align-items:center;gap:10px;font-weight:850;color:var(--accent);margin:15px 0}.light{width:22px;height:22px;flex:none;border-radius:50%;background:var(--accent);box-shadow:0 0 17px var(--accent)}.timer{display:inline-block;padding:7px 11px;border-radius:9px;background:#10443a;border:1px solid #42be97;color:#96f5c9;font-weight:800;font-variant-numeric:tabular-nums}.timer.warn{background:#493a19;color:#ffe5a8;border-color:#e0b55c}.timer.late{background:#542731;color:#ffc2c9;border-color:#ec7688}.food{background:#14384d;padding:12px;border-radius:11px;margin-top:13px}.food div+div{border-top:1px solid #386073;margin-top:10px;padding-top:10px}small{color:#b6d1e0;display:block;margin-top:4px}.count{font-weight:800;color:#b3f6dc}.history{margin-top:18px;border-top:1px solid #316e88;padding-top:14px}summary{cursor:pointer;font-weight:800}a{color:#7aeafa}.muted{font-size:13px}@media(max-width:620px){.bar{align-items:flex-start}button{font-size:14px}.ticket{padding:13px}}
+
+/* Misión 64B: ajustes de tablet y celular, sin modificar lógica */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+header>div{min-width:0;flex:1 1 340px}
+header .pill{max-width:100%;overflow-wrap:anywhere}
+.bar{align-items:stretch;gap:16px}
+.bar>.tools:first-child{flex:1 1 290px;justify-content:flex-start}
+.bar>.tools:last-child{flex:2 1 580px;justify-content:flex-end}
+.tools{min-width:0}
+.tools>label{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.tools>label output{min-width:3.2em;text-align:right}
+button{max-width:100%;overflow-wrap:anywhere}
+.ticket,.panel{min-width:0}
+@media(max-width:1050px){
+ .bar{flex-direction:column}
+ .bar>.tools:first-child,.bar>.tools:last-child{flex:0 1 auto;justify-content:flex-start;width:100%}
+ .bar>.tools:first-child button{flex:1 1 110px}
+ .bar>.tools:last-child button{flex:1 1 200px}
+ .bar>.tools:last-child label{flex:1 1 210px}
+}
+@media(max-width:560px){
+ main{padding:12px 10px 28px}
+ header{align-items:flex-start}
+ header .pill{font-size:11px}
+ h1{font-size:clamp(24px,6vw,32px);line-height:1.2}
+ .panel{padding:12px}
+ .bar{gap:13px}
+ .tools{gap:8px}
+ .bar>.tools:first-child{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .bar>.tools:first-child button{padding:10px 5px;font-size:13px;min-height:48px}
+ .bar>.tools:last-child{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .bar>.tools:last-child button{width:100%;font-size:13px;min-height:48px;padding:10px 8px}
+ .bar>.tools:last-child label{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(55px,1fr) auto;align-items:center;gap:8px;padding:8px 2px}
+ .bar>.tools:last-child input[type=range]{width:100%;min-width:0}
+ .cards{grid-template-columns:minmax(0,1fr);gap:12px}
+ .ticket h3{font-size:20px}
+ .warning{padding:12px;overflow-wrap:anywhere}
+}
+</style></head><body><main><header><div><h1>👨‍🍳 Cocina · Hot-Dog Las Vías</h1><p>Tablet y celular · luces, cronómetros y campanillas</p></div><span class="pill">🧪 MISIÓN 64 · DEMO LOCAL</span></header>
+<div class="warning"><strong>SIMULACIÓN AISLADA:</strong> todos los pedidos son ficticios. Esta página no envía información a Render, Netlify ni WhatsApp; no cobra ni imprime en la Epson. Reiniciar o recargar descarta los cambios.</div>
+<section class="panel"><div class="bar"><div class="tools"><button data-filter="pending" class="active">Pendientes</button><button data-filter="all">Todos</button><button data-filter="ready">Listos</button></div><div class="tools"><button id="sound">🔕 Sonido apagado</button><label>Volumen <input type="range" min="20" max="100" value="70" id="vol"><output id="vtext">70%</output></label><button id="test">▶ Probar campanillas</button><button id="reset">↻ Reiniciar</button></div></div><p id="msg" role="status" aria-live="polite">Prueba las tres comandas ficticias.</p><div id="count" class="count"></div><div class="cards" id="orders"></div><details class="history"><summary>📋 Historial de listos (<span id="historyCount">0</span>)</summary><div id="history"></div></details></section>
+<p><a href="./index.html">← Volver al menú de laboratorio</a></p></main>
+<script>
+(()=>{'use strict';const $=id=>document.getElementById(id);
+const samples=[{id:'DEMO-101',type:'delivery',label:'Servicio a domicilio',elapsed:475,state:'nuevo',items:[{qty:2,name:'Hotdog sencillo',detail:'Con todo'}]},{id:'DEMO-102',type:'pickup',label:'Ordene y recoja',elapsed:775,state:'preparando',items:[{qty:1,name:'Salchipapas',detail:'Sin cebolla'}]},{id:'MESA-1',type:'mesa',label:'Consumo en Mesa 1',elapsed:215,state:'preparando',items:[{qty:1,name:'Hamburguesa',detail:'Sin tomate'},{qty:1,name:'Agua fresca',detail:'Jamaica'}]}];
+let orders=[],filter='pending',sound=false,ctx=null;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function reset(){orders=samples.map(x=>({...x,start:Date.now()-x.elapsed*1000,readyAt:null,items:x.items.map(y=>({...y}))}));filter='pending';$('msg').textContent='Demostración reiniciada.';render()}
+function secs(o){return Math.max(0,Math.floor(((o.readyAt||Date.now())-o.start)/1000))}
+function timer(o){const s=secs(o),min=Math.floor(s/60);return '<span class="timer '+(o.state==='listo'?'':min>=20?'late':min>=10?'warn':'')+'" data-time="'+esc(o.id)+'">'+(o.state==='listo'?'✓ Listo en ':'⏱ ')+min+':'+String(s%60).padStart(2,'0')+' min</span>'}
+function card(o){return '<article class="ticket '+o.type+'"><div class="row"><h3>#'+esc(o.id)+'</h3><span class="state">'+(o.state==='listo'?'✅ Listo':o.state==='nuevo'?'🆕 Nuevo':'👨‍🍳 Preparando')+'</span></div><div class="kind"><span class="light"></span>'+esc(o.label)+'</div>'+timer(o)+'<div class="food">'+o.items.map(x=>'<div><b>'+x.qty+' × '+esc(x.name)+'</b><small>'+esc(x.detail)+'</small></div>').join('')+'</div>'+(o.state==='listo'?'':'<button class="done" data-ready="'+esc(o.id)+'">✅ Marcar listo</button>')+'</article>'}
+function render(){document.querySelectorAll('button[data-filter]').forEach(b=>{b.classList.toggle('active',b.dataset.filter===filter);b.setAttribute('aria-pressed',String(b.dataset.filter===filter))});const selected=orders.filter(o=>filter==='all'||(filter==='ready'?o.state==='listo':o.state!=='listo'));$('orders').innerHTML=selected.length?selected.map(card).join(''):'<p>Sin comandas en esta categoría.</p>';$('count').textContent=orders.filter(o=>o.state!=='listo').length+' pedidos pendientes · 3 pedidos ficticios';const done=orders.filter(o=>o.state==='listo');$('historyCount').textContent=done.length;$('history').innerHTML=done.length?done.map(o=>'<p>✅ '+esc(o.id)+' · '+esc(o.label)+'</p>').join(''):'<p>Aún no hay pedidos listos.</p>'}
+function tick(){document.querySelectorAll('[data-time]').forEach(el=>{const o=orders.find(o=>o.id===el.dataset.time);if(!o)return;const s=secs(o),m=Math.floor(s/60);el.className='timer '+(o.state==='listo'?'':m>=20?'late':m>=10?'warn':'');el.textContent=(o.state==='listo'?'✓ Listo en ':'⏱ ')+m+':'+String(s%60).padStart(2,'0')+' min'})}
+function bell(force=false){if(!force&&!sound)return;try{ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();ctx.resume();const t=ctx.currentTime+.02,v=+$('vol').value/100;[784,988,1318,988,1318].forEach((f,i)=>{const osc=ctx.createOscillator(),gain=ctx.createGain(),at=t+i*.16;osc.type='sine';osc.frequency.value=f;gain.gain.setValueAtTime(.0001,at);gain.gain.exponentialRampToValueAtTime(Math.max(.001,v*.09),at+.015);gain.gain.exponentialRampToValueAtTime(.0001,at+.43);osc.connect(gain);gain.connect(ctx.destination);osc.start(at);osc.stop(at+.46)})}catch(e){$('msg').textContent='El navegador bloqueó el sonido.'}}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-ready]');if(b){const o=orders.find(o=>o.id===b.dataset.ready);if(o&&o.state!=='listo'){o.state='listo';o.readyAt=Date.now();$('msg').textContent='✅ '+o.id+' listo (solo simulación).';bell();render()}}});
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});
+$('sound').onclick=()=>{sound=!sound;$('sound').textContent=sound?'🔔 Sonido activado':'🔕 Sonido apagado';$('sound').setAttribute('aria-pressed',String(sound));if(sound)bell()};
+$('test').onclick=()=>bell(true);$('reset').onclick=reset;$('vol').oninput=()=>{$('vtext').textContent=$('vol').value+'%'};setInterval(tick,1000);reset();
+})();
+</script></body></html>
