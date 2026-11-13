@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#071827"><title>Mesero · Hot-Dog Las Vías · Misión 72</title>
+<style>
+:root{font:16px system-ui,Arial,sans-serif;color-scheme:dark}*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;color:#f0fbff;background:radial-gradient(ellipse at top,#19435d,#061625 75%)}
+main{max-width:1200px;margin:auto;padding:clamp(12px,2.5vw,25px)}h1{color:#5ee6ff;font-size:clamp(26px,4vw,38px);margin:8px 0}h2{font-size:23px;margin:8px 0 15px}p{color:#c4e0eb;line-height:1.5}
+.badge{display:inline-block;border-radius:99px;background:#225b71;padding:8px 12px;font-size:13px;font-weight:800}
+.warning{border-left:5px solid #ffce72;background:#4c371c;border-radius:10px;padding:14px;color:#fff2d5;margin:17px 0}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}nav a{color:#b5f4ff;border:1px solid #4d98b0;border-radius:10px;background:#12394d;padding:9px 12px}
+.panel{border:1px solid #4284a1;border-radius:17px;padding:clamp(13px,3vw,20px);margin:16px 0;background:#102c41}
+.tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tablebtn{padding:18px 13px;text-align:left;border:2px solid #498ca7;border-radius:15px;background:#153d56;color:white;cursor:pointer}
+.tablebtn strong{font-size:23px;display:block}.tablebtn small{font-size:14px;color:#d0e9f5}.tablebtn.active{border-color:#55e2fa;background:#1c596c;box-shadow:0 0 0 2px #3fcfea40}
+.tablebtn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ffdf91;outline-offset:3px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:7px;font-weight:750}
+button,input,select{font:inherit;min-height:46px;padding:10px 12px;border-radius:10px}select,input{background:#081e2d;color:#fff;border:1px solid #5295b3;min-width:0;width:100%}
+button{font-weight:800;cursor:pointer;background:#4bd7ec;color:#062332;border:1px solid #69edff}button.secondary{background:#27516b;color:#fff}button:disabled{opacity:.48;cursor:not-allowed}
+.round{border:1px solid #396d88;border-radius:12px;background:#143a52;padding:12px 14px;margin:11px 0}.round strong{font-size:17px}.round small{color:#bcd9e6;display:block;margin-top:5px}
+.total{font-size:27px;color:#92ffe1;font-weight:900}.status{border-radius:99px;padding:8px 11px;background:#245b6d;font-weight:800}.note{color:#afffe4;font-weight:700;min-height:23px}
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.toolbar button{flex:1 1 190px}.muted{color:#b7d4e0;font-size:14px}footer{margin:26px 0;color:#a8cad8;font-size:13px}
+@media(max-width:680px){.form-grid{grid-template-columns:1fr}.tables{grid-template-columns:1fr 1fr}.tablebtn{padding:13px 9px}.tablebtn strong{font-size:19px}.toolbar button{flex:1 1 100%}}
+.burger-choice{display:flex;align-items:center;gap:9px;margin:6px 0;font-weight:650}
+.burger-choice input{width:20px;height:20px;min-height:20px;accent-color:#49dcec}
+#burger-exclusions{border:1px solid #46758b;border-radius:10px;padding:9px 11px;margin-top:6px}
+[hidden],#detail[hidden],#burger-box[hidden],#detail-box[hidden]{display:none!important}
+#ingredient-toggle{width:100%;text-align:left;margin-top:8px}
+#burger-exclusions[hidden]{display:none!important}
+#burger-exclusions{display:grid;gap:5px}
+#burger-box .burger-choice{min-height:36px}
+</style></head><body><main>
+<span class="badge">🧪 MISIÓN 72 · HAMBURGUESA PLEGABLE</span>
+<h1>🍽️ Mesero · Hot-Dog Las Vías</h1>
+<p>Dos mesas independientes, rondas adicionales y cuentas separadas. Adaptado para tablet y celular.</p>
+<div class="warning"><strong>SIMULACIÓN AISLADA:</strong> los cambios no llegan a Cocina, Caja, Render ni Epson; no se cobran ni imprimen tickets reales. Todo se borra al recargar esta página.</div>
+<nav><a href="./cocina-v67.html">👨‍🍳 Cocina de prueba</a><a href="./caja-v68.html">💰 Caja de prueba</a><a href="./mesero-v71.html">↩ Mesero #71 anterior</a></nav>
+<section class="panel"><h2>🪑 Selecciona una mesa</h2><div class="tables"><button class="tablebtn active" type="button" data-table="1" aria-pressed="true"><strong>🍽️ Mesa 1</strong><small id="summ1">0 productos · Nuevo</small></button><button class="tablebtn" type="button" data-table="2" aria-pressed="false"><strong>🍽️ Mesa 2</strong><small id="summ2">0 productos · Nuevo</small></button></div></section>
+<section class="panel"><div class="row" style="justify-content:space-between"><h2 id="heading">🪑 Pedido de Mesa 1</h2><span class="status" id="status">Nuevo</span></div>
+<div class="form-grid">
+<label class="field">Producto<select id="product"><option value="Hotdog sencillo|25">Hotdog sencillo · $25</option><option value="Hotdog con papas|50">Hotdog con papas · $50</option><option value="Combo 2 hotdogs|70">Combo 2 hotdogs · $70</option><option value="Hamburguesa|70">Hamburguesa · $70</option><option value="Salchipapas|50">Salchipapas · $50</option><option value="Orden de papas|25">Orden de papas · $25</option><option value="Agua fresca|30">Agua fresca · $30</option><option value="Coca-Cola|30">Coca-Cola · $30</option></select></label>
+<label class="field">Cantidad<input id="qty" type="number" min="1" max="25" inputmode="numeric" value="1"></label>
+<div class="field" id="detail-box">
+<label id="detail-label" for="detail">Preparación o sabor</label>
+<select id="detail"></select>
+<div id="burger-box" hidden>
+<label class="burger-choice"><input type="checkbox" id="burger-all" checked> Con todo</label>
+<button type="button" id="ingredient-toggle" class="secondary" aria-expanded="false" aria-controls="burger-exclusions">🥬 Ingredientes ▾</button>
+<div id="burger-exclusions" hidden></div>
+</div></div>
+</div><p><button id="add">➕ Agregar producto a la mesa seleccionada</button></p>
+<p class="muted">Cada producto añadido se registra como una ronda de prueba en la mesa seleccionada. Las mesas no se mezclan.</p>
+</section>
+<section class="panel"><h2 id="commandTitle">📋 Comanda de Mesa 1</h2><div id="rounds" aria-live="polite"></div>
+<div class="row" style="justify-content:space-between;margin-top:18px"><b>Total informativo de la mesa</b><span id="total" class="total">$0.00</span></div>
+<h2 style="margin-top:23px">Estado de preparación (solo simulación)</h2>
+<div class="toolbar"><button id="accept" class="secondary">1 · Aceptar pedido</button><button id="prepare" class="secondary">2 · En preparación</button><button id="ready" class="secondary">3 · Listo</button></div>
+<p id="message" class="note" role="status">La mesa está lista para recibir pedidos ficticios.</p>
+<p><button id="reset" class="secondary">↻ Reiniciar solamente esta mesa</button></p>
+</section>
+<footer>Hot-Dog Las Vías · Laboratorio 72 · No se comparten datos entre equipos o pestañas.</footer>
+</main><script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const mesas={1:{rounds:[],state:0},2:{rounds:[],state:0}};
+const estados=['Nuevo','Aceptado','En preparación','Listo'];
+let current=1;
+const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function money(n){return '$'+n.toFixed(2)}
+const detailsByProduct={
+ 'Hotdog sencillo':['Con todo','Natural','Solo mayonesa','Solo salchicha','Solo tomate','Solo cebolla','Sin mostaza','Sin catsup','Sin cebolla'],
+ 'Hotdog con papas':['Con todo','Natural','Solo mayonesa','Solo salchicha','Solo tomate','Solo cebolla','Sin mostaza','Sin catsup','Sin cebolla'],
+ 'Combo 2 hotdogs':['Con todo','Natural','Solo mayonesa','Solo salchicha','Solo tomate','Solo cebolla','Sin mostaza','Sin catsup','Sin cebolla'],
+ 'Hamburguesa':[],
+ 'Salchipapas':['Con todo','Sin cebolla','Sin catsup','Sin mostaza'],
+ 'Orden de papas':['Normal','Sin catsup','Sin mostaza'],
+ 'Agua fresca':['Jamaica','Horchata','Piña','Cebada'],
+ 'Coca-Cola':[]
+};
+const burgerOptions=['Sin cebolla','Sin tomate','Sin lechuga','Sin aderezo','Sin mayonesa'];
+$('burger-exclusions').innerHTML=burgerOptions.map(v=>'<label class="burger-choice"><input type="checkbox" class="burger-ex" value="'+v+'"> '+v+'</label>').join('');
+function closeIngredients(){
+ $('burger-exclusions').hidden=true;
+ $('ingredient-toggle').setAttribute('aria-expanded','false');
+ $('ingredient-toggle').textContent='🥬 Ingredientes ▾';
+}
+function refreshDetails(){
+ const [name]=$('product').value.split('|');
+ const burger=name==='Hamburguesa',cola=name==='Coca-Cola';
+ $('detail-box').hidden=cola;
+ $('detail').hidden=burger||cola;
+ $('detail-label').hidden=burger||cola;
+ $('burger-box').hidden=!burger;
+ if(burger){
+   $('burger-all').checked=true;
+   document.querySelectorAll('.burger-ex').forEach(el=>{el.checked=false;el.disabled=true});
+   closeIngredients();
+   return;
+ }
+ if(cola){$('detail').innerHTML='';return}
+ $('detail').innerHTML=(detailsByProduct[name]||['Normal']).map(s=>'<option>'+s+'</option>').join('');
+}
+$('ingredient-toggle').addEventListener('click',()=>{
+ const opening=$('burger-exclusions').hidden;
+ $('burger-exclusions').hidden=!opening;
+ $('ingredient-toggle').setAttribute('aria-expanded',String(opening));
+ $('ingredient-toggle').textContent=opening?'🥬 Ocultar ingredientes ▴':'🥬 Ingredientes ▾';
+ if(opening){
+   $('burger-all').checked=false;
+   document.querySelectorAll('.burger-ex').forEach(el=>{el.disabled=false});
+ }
+});
+$('burger-all').addEventListener('change',()=>{
+ const checked=$('burger-all').checked;
+ if(checked){
+  document.querySelectorAll('.burger-ex').forEach(el=>{el.checked=false;el.disabled=true});
+  closeIngredients();
+ }else{
+  document.querySelectorAll('.burger-ex').forEach(el=>{el.disabled=false});
+  $('burger-exclusions').hidden=false;
+  $('ingredient-toggle').setAttribute('aria-expanded','true');
+  $('ingredient-toggle').textContent='🥬 Ocultar ingredientes ▴';
+ }
+});
+$('product').addEventListener('change',refreshDetails);
+function selectedDetail(name){
+ if(name==='Coca-Cola')return '';
+ if(name==='Hamburguesa'){
+   if($('burger-all').checked)return 'Con todo';
+   const choices=[...document.querySelectorAll('.burger-ex:checked')].map(el=>el.value);
+   return choices.length?choices.join(', '):'Con todo';
+ }
+ return $('detail').value||'Normal';
+}
+function render(){
+ const m=mesas[current];
+ document.querySelectorAll('[data-table]').forEach(b=>{const active=Number(b.dataset.table)===current;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});
+ for(let n=1;n<=2;n++){const x=mesas[n];$('summ'+n).textContent=x.rounds.reduce((a,r)=>a+r.qty,0)+' productos · '+estados[x.state]}
+ $('heading').textContent='🪑 Pedido de Mesa '+current;
+ $('commandTitle').textContent='📋 Comanda de Mesa '+current;
+ $('status').textContent=estados[m.state];
+ $('rounds').innerHTML=m.rounds.length?m.rounds.map((r,i)=>'<div class="round"><div class="row" style="justify-content:space-between"><strong>Ronda '+(i+1)+' · '+r.qty+' × '+safe(r.name)+'</strong><button class="secondary" data-remove="'+i+'">Quitar</button></div><small>'+safe(r.detail)+'</small></div>').join(''):'<p>Aún no hay productos en esta mesa.</p>';
+ $('total').textContent=money(m.rounds.reduce((s,r)=>s+r.qty*r.price,0));
+ ['accept','prepare','ready'].forEach((id,i)=>$(id).disabled=m.state!==i);
+}
+document.querySelectorAll('[data-table]').forEach(b=>b.onclick=()=>{current=Number(b.dataset.table);$('message').textContent='Mesa '+current+' seleccionada; sus productos y estado son independientes.';render()});
+$('add').onclick=()=>{
+ const qty=Number($('qty').value);if(!Number.isInteger(qty)||qty<1||qty>25){$('message').textContent='⚠️ Cantidad permitida: de 1 a 25.';return}
+ const [name,price]=$('product').value.split('|');mesas[current].rounds.push({qty,name,price:Number(price),detail:selectedDetail(name)});
+ $('message').textContent='✅ Ronda añadida a Mesa '+current+' (solo simulación).';$('qty').value='1';render()
+};
+document.addEventListener('click',e=>{const b=e.target.closest('button[data-remove]');if(!b)return;mesas[current].rounds.splice(Number(b.dataset.remove),1);$('message').textContent='Producto de prueba quitado de Mesa '+current;render()});
+['accept','prepare','ready'].forEach((id,i)=>$(id).onclick=()=>{if(mesas[current].state!==i)return;mesas[current].state=i+1;$('message').textContent='✅ Mesa '+current+' cambió a '+estados[i+1]+' dentro de esta simulación. Sin avisos al celular.';render()});
+$('reset').onclick=()=>{if(!confirm('¿Reiniciar solamente Mesa '+current+'?'))return;mesas[current]={rounds:[],state:0};$('message').textContent='↻ Mesa '+current+' reiniciada sin alterar la otra mesa.';render()};
+refreshDetails();render();
+})();
+</script></body></html>
