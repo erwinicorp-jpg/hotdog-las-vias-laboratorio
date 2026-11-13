@@ -1,0 +1,241 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hot-Dog Las Vías | Misión 75 · Mesero Cocina Caja</title><style>
+:root{color-scheme:dark;--cyan:#31d9f9;--blue:#168aff;--bg:#07111f;--text:#f3fbff;--gold:#ffba34}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 45% 0,#143852,#07111f 68%);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;font-size:16px}button,input,textarea{font:inherit}button{cursor:pointer}header{background:#141339ea;border-bottom:1px solid #27c8ee;box-shadow:0 5px 23px #00a9ff20;position:sticky;top:0;z-index:3;padding:13px clamp(12px,3vw,28px);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}header h1{font-size:clamp(18px,2.7vw,25px);margin:0}header small{display:block;color:#a8d4e9;margin-top:4px}.tag{border:1px solid #43dffa;border-radius:24px;padding:7px 12px;font-size:12px;color:#a8f2ff;background:#0c344a}.layout{width:min(1540px,100%);display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:18px;margin:auto;padding:18px}@media(max-width:900px){.layout{grid-template-columns:1fr}}.panel{min-width:0;border:1px solid #266887;border-radius:20px;background:#0c2033;padding:clamp(12px,2vw,22px)}h2{margin:0 0 10px;font-size:23px}.muted{color:#b6d8e8;font-size:14px;line-height:1.5}.note{border:1px solid #247fa7;border-radius:12px;background:#10364f;padding:12px;color:#c9f5ff;font-size:14px}.menu{display:grid;gap:9px;margin-top:16px}.product{border:1px solid #1cbbf3;border-radius:15px;overflow:hidden;background:linear-gradient(130deg,#0e2741,#103954 60%,#0e263c)}.product[open]{box-shadow:0 0 0 1px #22ccf647,0 0 19px #09cbff27}.product summary{cursor:pointer;background:linear-gradient(110deg,#123754,#0d4a69);padding:16px;display:flex;align-items:center;gap:12px;list-style:none;min-height:75px}.product summary::-webkit-details-marker{display:none}.product[open] summary{background:linear-gradient(110deg,#135577,#08749a);border-bottom:1px solid #2ddfff75}.emoji{font-size:27px;min-width:32px}.pname{flex:1;min-width:0}.pname strong{font-size:18px;display:block;line-height:1.25}.pname small{display:block;color:#c8e3ee;font-size:13px;margin-top:3px}.price{background:#ffbd2d;color:#142435;font-weight:900;border-radius:24px;padding:6px 10px;white-space:nowrap}.body{padding:15px;background:#0b2439}.field{font-weight:800;color:#a0eeff;margin:10px 0 8px}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.choice{display:flex;align-items:center;gap:9px;background:#0e2f47;border:1px solid #265c79;border-radius:10px;padding:10px;min-height:46px;color:#fff;font-size:15px}.choice:has(input:checked){background:#125977;border-color:#2ee1ff}.choice input{width:19px;height:19px;accent-color:#13ddff;flex:none}.req{font-size:11px;color:#ffd78b}.qty{display:flex;gap:14px;align-items:center;margin:13px 0}.qty input{width:85px;background:#081a2a;color:#fff;border:1px solid #357b9b;border-radius:10px;padding:10px}.notes{width:100%;resize:vertical;min-height:62px;padding:11px;border-radius:11px;border:1px solid #337b98;background:#081b2d;color:#fff}.btn{border:0;border-radius:11px;padding:12px 16px;min-height:45px;background:linear-gradient(110deg,#22d6ec,#108dff);color:#052439;font-weight:900}.btn:disabled{opacity:.43;cursor:not-allowed}.btn.sec{border:1px solid #347d9a;background:#113951;color:#d9faff}.btn.orange{background:#ffb743}.btn.green{background:#2bda94}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.cart{display:grid;gap:9px;margin-top:14px}.cartitem{background:#112f44;border:1px solid #255c79;border-radius:11px;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}.cartitem small{display:block;color:#b8dae8;margin-top:3px;line-height:1.4}.cartitem button{font-size:12px;padding:7px}.total{display:flex;justify-content:space-between;margin-top:14px;padding-top:13px;border-top:1px solid #32627e;font-weight:900;font-size:20px}.empt{border:1px dashed #38627c;border-radius:12px;text-align:center;padding:19px;color:#aacde0}.orders{display:grid;gap:10px;margin-top:14px}.order{background:#0e2c42;border:2px solid #36dfff;border-radius:15px;padding:15px;box-shadow:0 0 17px #06d4ff21}.order.new{box-shadow:0 0 18px #09d4ff70}.orderhead{display:flex;align-items:center;justify-content:space-between;gap:7px}.orderhead h3{margin:0;font-size:20px}.order ul{padding-left:20px;line-height:1.55;font-size:14px}.order .status{color:#ffdc84;font-weight:850;font-size:14px;margin-top:10px}.order .amount{color:#86efff;font-weight:900}.boxhead{display:flex;justify-content:space-between;align-items:center;gap:9px;flex-wrap:wrap}.toast{position:fixed;z-index:99;top:85px;right:15px;background:#145c6b;border:1px solid #8afcff;padding:12px 16px;border-radius:11px;box-shadow:0 12px 35px #0008;max-width:330px}.toast[hidden]{display:none}footer{max-width:1500px;margin:0 auto;padding:10px 20px 35px;color:#a8cbd9;font-size:13px;line-height:1.5}@media(max-width:480px){.choices{grid-template-columns:1fr}.product summary{padding:13px 10px}.pname strong{font-size:17px}.price{font-size:14px;padding:6px}.panel{padding:13px}}
+
+/* V3: bebida directa, sin panel de ingredientes */
+.direct-drink{border:1px solid #1cbbf3;border-radius:15px;background:linear-gradient(110deg,#123754,#0d4a69);padding:15px;display:grid;gap:12px}
+.direct-main{display:flex;align-items:center;gap:12px}.direct-controls{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:12px}
+.direct-controls label{font-weight:800;color:#ddf6ff}.direct-controls input{width:78px;padding:10px;border:1px solid #3297b6;background:#081a2a;border-radius:9px;color:white}
+.direct-drink .btn{min-width:160px}.options-hidden[hidden]{display:none!important}.choice:focus-within{outline:2px solid #52edff;outline-offset:2px}
+@media(max-width:480px){.direct-controls{justify-content:flex-start}.direct-drink .btn{flex:1}}
+
+/* V4: precio, cantidad y agregar alineados en bebida directa */
+.direct-inline{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.direct-inline .direct-main{flex:1 1 175px;min-width:0}
+.direct-inline .direct-controls{display:flex;align-items:center;flex-wrap:nowrap;gap:8px;justify-content:flex-end;margin-left:auto}
+.direct-inline .direct-controls input{width:62px;min-width:0;height:44px;text-align:center}
+.direct-inline .direct-controls .btn{min-width:0;white-space:nowrap;padding:10px 13px}
+.direct-inline .price{font-size:16px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.archive-heading{margin-top:24px;border-top:1px solid #377a96;padding-top:17px}
+.order.attended{border-color:#278978;background:#0e302f;box-shadow:none;opacity:.95}
+.order.attended .status{color:#70f5bf}
+@media(max-width:650px){.direct-inline .direct-controls{flex:1 1 100%;justify-content:flex-start}.direct-inline .direct-controls .btn{flex:1}.direct-inline .price{margin-right:auto}}
+
+/* V5: el precio se alinea con los demas productos;
+   la cantidad y Agregar quedan juntos a la derecha debajo del precio. */
+.direct-inline{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:8px}
+.direct-inline .direct-main{grid-column:1;grid-row:1;min-width:0}
+.direct-inline .direct-price{grid-column:2;grid-row:1;justify-self:end;margin:0}
+.direct-inline .direct-controls{grid-column:1 / -1;grid-row:2;justify-self:end;display:flex;flex-wrap:nowrap;align-items:center;gap:8px;margin:0}
+.direct-inline .direct-controls input{width:72px;height:44px;text-align:center}
+.direct-inline .direct-controls .btn{min-width:0;flex:none;padding:10px 14px}
+@media(max-width:650px){.direct-inline .direct-controls{flex:none;justify-content:flex-end;justify-self:end}.direct-inline .direct-controls .btn{flex:none}.direct-inline .price{margin-right:0}}
+/* V6: cantidad, Agregar y precio en una misma línea, precio al extremo derecho. */
+.direct-inline{display:flex;flex-wrap:nowrap;align-items:center;gap:12px}
+.direct-inline .direct-main{flex:1 1 auto;min-width:0}
+.direct-inline .direct-controls{display:flex;flex:0 0 auto;align-items:center;justify-content:flex-end;gap:9px;margin:0}
+.direct-inline .direct-price{flex:0 0 auto;margin:0 0 0 2px;align-self:center}
+.direct-inline .direct-controls input{width:70px;min-width:0;height:46px;text-align:center}
+.direct-inline .direct-controls .btn{min-width:0;flex:0 0 auto;padding:11px 13px;white-space:nowrap}
+@media(max-width:620px){
+ .direct-inline{flex-wrap:wrap;gap:8px}
+ .direct-inline .direct-main{flex-basis:100%}
+ .direct-inline .direct-controls{margin-left:auto}
+ .direct-inline .direct-price{margin-left:0}
+}
+@media(max-width:360px){.direct-inline .direct-controls input{width:55px}.direct-inline .direct-controls .btn{padding:10px 9px}}
+
+/* Diseño simplificado: una sola función por pantalla */
+.appnav{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:14px clamp(12px,3vw,28px);background:#0b1c31;position:sticky;top:85px;z-index:2;border-bottom:1px solid #276b85}
+.appnav button{border:1px solid #3584a0;color:#d5f4ff;background:#10354e;border-radius:12px;padding:13px 16px;font-weight:800}
+.appnav button.active{background:#32d8ef;color:#082332}
+.view{display:none}.view.active{display:block}.viewgrid{max-width:1180px;margin:24px auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(310px,.85fr);gap:20px;padding:0 16px}
+@media(max-width:800px){.viewgrid{grid-template-columns:1fr}.appnav{top:70px}}
+.panel{min-width:0}.slogan{font-size:13px;color:#9ac7d8}.fine{font-size:13px;color:#a9d2df}.hint{background:#0b263b;border:1px solid #326b87;color:#bce3f3;padding:12px;border-radius:12px}
+.actionbar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.actionbar button{flex:1}.pill{border-radius:999px;padding:5px 10px;background:#214e65;color:#d7f3ff;font-size:13px}
+.minicards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.minicard{background:#0d2940;border:1px solid #32758c;padding:17px;border-radius:14px;min-width:0}.minicard .big{font-size:clamp(21px,4vw,32px);font-weight:900;color:#62dff7;margin-top:10px}
+.inline-input{border:1px solid #3d7891;border-radius:10px;background:#061a2b;color:#fff;padding:12px;width:100%;margin-top:8px}
+.kitchens{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.kitchenCard{border:1px solid #239ccb;background:#0c293d;padding:16px;border-radius:16px}.kitchenCard.mesa{border-color:#33bcf5}.kitchenCard.domicilio{border-color:#38ce99}.kitchenCard.recoger{border-color:#f2b34a}
+.kitchenCard h3{margin:0 0 12px}.kitchenCard .actions{margin-top:14px}.kitchenCard .btn{margin:3px}
+.order{background:#0b2539;border:1px solid #327f9a;border-radius:15px;padding:16px;margin:11px 0}.order h3{font-size:19px}.order .actions{margin-top:14px}.order .btn{padding:12px 15px}.order ul{line-height:1.8}.rowline{display:flex;justify-content:space-between;gap:8px;align-items:center;margin:10px 0;flex-wrap:wrap}
+.btn.yellow{background:#ffbe4b;color:#261800}.btn.green{background:#2cd79f;color:#092d26}.btn.muted{background:#28536c;color:#fff}.btn.ghost{background:#143c55;color:#d5f5ff;border:1px solid #4a859e}
+.empty{padding:25px;text-align:center;color:#add2dd;border:1px dashed #2d617c;border-radius:12px}.warning{color:#ffcb83}.success{color:#64e6aa}
+.demo-badge{font-weight:800;font-size:13px;color:#fff;background:#864c11;border-radius:999px;padding:7px 11px}.kbd{font-size:12px;color:#aad1e1}.ticketpreview{max-width:380px;margin:8px auto;background:#fff;color:#111;padding:18px;border-radius:5px;font-family:monospace;white-space:pre-wrap;line-height:1.5;box-shadow:0 9px 24px #0005}
+.table{border-collapse:collapse;width:100%}.table th,.table td{padding:13px 8px;text-align:left;border-bottom:1px solid #355f79}.table td:last-child,.table th:last-child{text-align:right}.log{max-height:330px;overflow:auto}.logitem{border-bottom:1px solid #31566b;padding:9px 0;color:#c8dce9}
+@media(max-width:540px){.minicards{grid-template-columns:1fr 1fr}.appnav button{flex:1}.actionbar button{min-width:45%}}
+.elapsed{font-size:19px;font-weight:850;color:#9cf8d0;background:#092c32;border:1px solid #388e89;border-radius:10px;padding:8px 10px;margin:11px 0}.burger-extras[hidden]{display:none!important}.burger-extras{margin-top:11px}.burger-extras-toggle{margin-top:10px;width:100%;text-align:left}
+</style></head><body><header><div><h1>🌭 Hot-Dog Las Vías · Pedidos en Mesa</h1><small>Vista previa · Diseño propuesto para el sistema final</small></div><div class="actions" style="margin:0"><span class="tag">🍽️ Misión 75 · 2 mesas</span><button class="btn sec" id="sound" type="button">🔊 Alertas activas</button></div></header>
+<nav class="appnav" aria-label="Paneles"><button class="active" data-view="mesero">🍽️ Mesero</button><button data-view="cocina">👨‍🍳 Cocina</button><button data-view="caja">💰 Caja</button><span class="demo-badge">DEMO SIN CONEXIÓN</span></nav>
+<section class="view active" id="view-mesero"><div class="viewgrid"><section class="panel"><h2>🍽️ Tomar pedido</h2><div class="note" style="margin:10px 0"><label for="mesaSelect"><strong>Seleccionar mesa: </strong></label><select id="mesaSelect" style="padding:11px;border-radius:9px;background:#091c2f;color:white;border:1px solid #40bddd"><option value="1">🍽️ Mesa 1</option><option value="2">🍽️ Mesa 2</option></select><p class="fine">Si ya existe una cuenta abierta, los nuevos productos se suman a esa misma cuenta.</p></div><p class="slogan">Menú V7 original: ingredientes, extras y bebidas. Solo una pantalla para el mesero.</p><div class="menu" id="menu"></div><h2 style="margin-top:22px">🛒 Carrito para la mesa seleccionada</h2><div class="cart" id="cart"></div><div class="total"><span>Total</span><span id="total">$0 MXN</span></div><div class="actions"><button class="btn green" id="send" disabled>📨 Enviar a Cocina</button><button class="btn sec" id="emptycart">Vaciar carrito</button></div><p class="fine">Puedes enviar más alimentos a una cuenta abierta antes de solicitarla. Los artículos iguales se suman en una sola línea. Enviar no imprime.</p></section><section class="panel"><div class="rowline"><h2>🧾 Cuenta de la mesa seleccionada</h2><span class="pill" id="mesaStatus">Disponible</span></div><p class="fine">Aquí aparecerán los pedidos enviados y los controles para solicitar cuenta y cobrar.</p><div id="mesaOrders"></div><h2 style="margin-top:20px">🥤 Bebidas a entregar</h2><div id="waiterDrinks" class="orders"></div><h2 style="margin-top:20px">🔔 Avisos de Cocina</h2><div id="waiterOrders" class="orders"></div></section></div></section>
+<section class="view" id="view-cocina"><div style="max-width:1180px;margin:24px auto;padding:0 16px"><section class="panel"><div class="rowline"><h2>👨‍🍳 Cocina · Pedidos entrantes</h2><span class="pill" id="kitchenCount">0 activos</span></div><p class="fine">Solo aparecen alimentos por preparar. Las bebidas se muestran al Mesero, no a Cocina. Cocina controla Aceptar → En preparación → Listo; Mesero monitorea esos cambios. Domicilio y recoger conservan impresión manual (solo vista previa).</p><div class="kitchens" id="kitchenOrders"></div><h2 style="margin-top:24px">✅ Atendidos</h2><div id="attendedOrders" class="kitchens"></div></section><section class="panel"><h2>🧪 Crear pedidos ficticios</h2><p class="fine">Para comprobar el flujo de Caja sin tener que publicar el negocio.</p><div class="actionbar"><button class="btn muted" id="newdelivery">🛵 Simular domicilio ($120)</button><button class="btn muted" id="newpickup">🛍️ Simular recoger ($50)</button></div></section></div></section>
+<section class="view" id="view-caja"><div style="max-width:1180px;margin:24px auto;padding:0 16px"><section class="panel"><div class="rowline"><h2>💰 Caja general</h2><span class="pill">Vista del administrador</span></div><div class="minicards"><div class="minicard">💵 Total cobrado<div id="paidTotal" class="big">$0</div></div><div class="minicard">💸 Efectivo<div id="cashTotal" class="big">$0</div></div><div class="minicard">🏦 Transferencias<div id="transferTotal" class="big">$0</div></div><div class="minicard">⏳ Pendiente de cobrar<div id="pendingTotal" class="big">$0</div></div></div></section><section class="panel"><h2>📊 Ventas cobradas por modalidad</h2><table class="table"><thead><tr><th>Modalidad</th><th>Importe</th></tr></thead><tbody><tr><td>🍽️ Mesas</td><td id="salesMesa">$0</td></tr><tr><td>🛵 Domicilio</td><td id="salesDelivery">$0</td></tr><tr><td>🛍️ Pide y recoge</td><td id="salesPickup">$0</td></tr></tbody></table></section><section class="panel"><h2>🧾 Ventas e historial</h2><div id="salesHistory"></div><h2 style="margin-top:20px">📅 Corte de caja de demostración</h2><label>Fondo inicial en efectivo<input id="opening" class="inline-input" type="number" min="0" value="0" placeholder="0"></label><p id="cutInfo" class="hint" style="margin-top:12px"></p><button class="btn muted" id="downloadCsv">⬇️ Exportar ventas CSV</button><button class="btn ghost" id="reset" style="margin-left:8px">↻ Reiniciar demostración</button></section></div></section>
+<div id="toast" class="toast" role="status" hidden></div><footer style="padding:23px;text-align:center;color:#add2df"><strong>Vista previa local de diseño V7 + Cocina + Caja.</strong> No se conecta a Render, no registra cobros reales y no activa la Epson. Los pedidos de ejemplo se guardan solamente en este navegador.</footer><div id="ticketDialog" hidden style="position:fixed;inset:0;background:#000b;z-index:20;overflow:auto;padding:25px"><div style="max-width:480px;margin:auto;background:#102b3f;padding:20px;border-radius:18px;border:1px solid #3a92aa"><div class="rowline"><h2>🧾 Cuenta para el cliente</h2><button class="btn sec" id="closeTicket">Cerrar</button></div><div class="ticketpreview" id="ticketPreview"></div><p class="fine">Esto es una simulación: en el sistema publicado la Epson imprimirá el ticket cuando se solicite la cuenta.</p></div></div>
+<script>
+(()=>{'use strict';
+const products=[
+ {id:'hotdog',name:'Hotdog sencillo',price:25,emoji:'🌭',desc:'Personalízalo a tu gusto',type:'hotdog'},
+ {id:'hotdogpapas',name:'Hotdog con papas',price:50,emoji:'🌭',desc:'Hotdog acompañado de papas',type:'hotdog'},
+ {id:'combo',name:'Combo 2 hotdog',price:70,emoji:'🌭',desc:'Dos hotdogs con papas',type:'hotdog'},
+ {id:'hamburguesa',name:'Hamburguesa',price:70,emoji:'🍔',desc:'Personaliza los ingredientes',type:'burger'},
+ {id:'papas',name:'Orden de papas',price:25,emoji:'🍟',desc:'Natural o con todo',type:'papas'},
+ {id:'salchipapas',name:'Salchipapas',price:50,emoji:'🍟',desc:'Preparación a tu gusto',type:'papas'},
+ {id:'coca',name:'Coca-Cola',price:30,emoji:'🥤',desc:'Bebida',type:'coca'},
+ {id:'agua',name:'Agua fresca',price:30,emoji:'🥤',desc:'Elige el sabor',type:'agua'}
+];
+const $=id=>document.getElementById(id);const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const money=n=>'$'+n+' MXN';let cart=[],orders=[],seq=1,enable=true,ctx=null,timer;
+try{const saved=JSON.parse(localStorage.getItem('hdv-v7-demo')||'null');if(saved&&Array.isArray(saved.orders)){orders=saved.orders;seq=saved.seq||1}}catch(e){}
+function persist(){try{localStorage.setItem('hdv-v7-demo',JSON.stringify({orders,seq}))}catch(e){}}
+
+function toast(s){$('toast').textContent=s;$('toast').hidden=false;clearTimeout(timer);timer=setTimeout(()=>$('toast').hidden=true,2400)}
+function ring(){if(!enable)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;ctx=ctx||new C();if(ctx.state==='suspended')ctx.resume();const t=ctx.currentTime+.01;[660,880,1108].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain(),at=t+i*.14;o.frequency.value=f;o.type='sine';g.gain.setValueAtTime(.0001,at);g.gain.exponentialRampToValueAtTime(.055,at+.01);g.gain.exponentialRampToValueAtTime(.0001,at+.12);o.connect(g);g.connect(ctx.destination);o.start(at);o.stop(at+.14)})}catch(e){}}
+const radio=(name,vals,preselect=true)=>'<div class="choices">'+vals.map((v,i)=>`<label class="choice"><input type="radio" name="${name}" value="${safe(v)}" ${preselect&&i===0?'checked':''}>${safe(v)}</label>`).join('')+'</div>';
+function controls(p){if(p.type==='hotdog')return `<div class="field">¿Cómo lo preparamos?</div>${radio('v-'+p.id,['Con todo','Natural','Natural sin catsup','Quitar ingredientes'])}<div class="options-hidden" data-omit-panel="${p.id}" hidden><div class="field">¿Qué ingredientes deseas quitar? <span class="req">(elige uno o varios)</span></div><div class="choices">${['Sin cebolla','Sin tomate','Sin mostaza','Sin catsup','Sin mayonesa'].map(v=>`<label class="choice"><input type="checkbox" name="omit-${p.id}" value="${v}">${v}</label>`).join('')}</div></div><div class="field">Extra asado <span class="req">(obligatorio; debes elegir una opción)</span></div>${radio('e-'+p.id,['Sin extra','Cebolla asada','Chile asado','Cebolla y chile asados'],false)}`;
+ if(p.type==='burger')return `<div class="field">Preparación</div>${radio('v-'+p.id,['Con todo','Natural'])}<button type="button" class="btn sec burger-extras-toggle" data-burger-toggle="${p.id}" aria-expanded="false">🥬 Ingredientes ▾</button><div class="burger-extras" data-burger-extras="${p.id}" hidden><div class="field">Ingredientes que deseas quitar <span class="req">(puedes seleccionar varios)</span></div><div class="choices">${['Sin tomate','Sin cebolla','Sin lechuga','Sin aderezo','Sin mayonesa'].map(v=>`<label class="choice"><input type="checkbox" name="omit-${p.id}" value="${v}">${v}</label>`).join('')}</div></div>`;
+ if(p.type==='papas')return `<div class="field">Preparación</div>${radio('v-'+p.id,['Natural','Con todo'])}`;
+ if(p.type==='agua')return `<div class="field">Sabor de agua fresca</div>${radio('v-'+p.id,['Jamaica','Piña','Cebada','Horchata'])}`;
+ return ''}
+function productMarkup(p){
+ if(p.type==='coca')return `<div class="direct-drink direct-inline" data-product="${p.id}"><div class="direct-main"><span class="emoji">${p.emoji}</span><span class="pname"><strong>${p.name}</strong><small>${p.desc}</small></span></div><div class="direct-controls"><label for="qty-${p.id}" class="sr-only">Cantidad de Coca-Cola</label><input id="qty-${p.id}" aria-label="Cantidad de Coca-Cola" type="number" inputmode="numeric" min="1" max="30" value="1"><button class="btn add" type="button">+ Agregar</button></div><span class="price direct-price">$${p.price}</span></div>`;
+ return `<details class="product" data-product="${p.id}"><summary><span class="emoji">${p.emoji}</span><span class="pname"><strong>${p.name}</strong><small>${p.desc}</small></span><span class="price">$${p.price}</span><span aria-hidden="true">⌄</span></summary><div class="body">${controls(p)}<div class="qty"><label for="qty-${p.id}"><strong>Cantidad</strong></label><input id="qty-${p.id}" type="number" inputmode="numeric" min="1" max="30" value="1"></div><button class="btn add" type="button">+ Agregar al carrito</button></div></details>`
+}
+$('menu').innerHTML=products.map(productMarkup).join('');
+$('menu').addEventListener('toggle',e=>{const d=e.target;if(d.tagName==='DETAILS'&&d.open)document.querySelectorAll('#menu details').forEach(o=>{if(o!==d)o.open=false})},true);
+$('menu').addEventListener('change',e=>{
+ const inp=e.target;
+ if(!inp.matches('input[type=radio][name^="v-"]'))return;
+ const d=inp.closest('details[data-product]');if(!d)return;
+ const panel=d.querySelector('[data-omit-panel]');
+ if(panel){panel.hidden=inp.value!=='Quitar ingredientes';if(panel.hidden)panel.querySelectorAll('input[type=checkbox]').forEach(c=>c.checked=false)}
+ if(d.dataset.product==='hamburguesa'&&inp.value==='Con todo'){const burgerPanel=d.querySelector('[data-burger-extras]');if(burgerPanel)burgerPanel.hidden=true;const toggle=d.querySelector('[data-burger-toggle]');if(toggle){toggle.setAttribute('aria-expanded','false');toggle.textContent='🥬 Ingredientes ▾'}d.querySelectorAll('input[name^="omit-"]').forEach(x=>x.checked=false)}
+});
+$('menu').addEventListener('click',e=>{
+ const toggle=e.target.closest('[data-burger-toggle]');if(toggle){const d=toggle.closest('details[data-product]'),pane=d.querySelector('[data-burger-extras]'),open=pane.hidden;pane.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'🥬 Ocultar ingredientes ▴':'🥬 Ingredientes ▾';if(open){const natural=d.querySelector('input[name="v-hamburguesa"][value="Natural"]');if(natural)natural.checked=true;}return}
+ const b=e.target.closest('.add');if(!b)return;
+ const d=b.closest('[data-product]'),p=products.find(x=>x.id===d.dataset.product),qInput=d.querySelector('input[type=number]');
+ let q=Math.floor(Number(qInput.value));if(!Number.isFinite(q)||q<1||q>30){toast('Elige una cantidad entre 1 y 30');qInput.focus();return}
+ const checked=d.querySelector(`input[name="v-${p.id}"]:checked`),extras=d.querySelector(`input[name="e-${p.id}"]:checked`);
+ const removed=[...d.querySelectorAll(`input[name="omit-${p.id}"]:checked`)].map(x=>x.value);
+ if(p.type==='hotdog'&&!extras){toast('⚠️ Selecciona un extra asado para continuar, incluso si es Sin extra.');d.querySelector(`input[name="e-${p.id}"]`).focus();return}
+ if(p.type==='hotdog'&&checked&&checked.value==='Quitar ingredientes'&&!removed.length){toast('⚠️ Elige al menos un ingrediente que deseas quitar.');d.querySelector(`input[name="omit-${p.id}"]`).focus();return}
+ let detail=checked?checked.value:'';
+ if(checked&&checked.value==='Quitar ingredientes')detail=removed.join(', ');
+ else if(removed.length)detail+=(detail?' · ':'')+removed.join(', ');
+ if(extras&&extras.value!=='Sin extra')detail+=(detail?' · ':'')+extras.value;
+ cart.push({name:p.name,price:p.price,qty:q,detail});qInput.value='1';
+ d.querySelectorAll('input[type=checkbox]').forEach(x=>x.checked=false);
+ if(p.type==='hotdog'){
+  d.querySelectorAll(`input[name="e-${p.id}"]`).forEach(x=>x.checked=false);
+  d.querySelectorAll(`input[name="v-${p.id}"]`).forEach(x=>x.checked=x.value==='Con todo');
+  const panel=d.querySelector('[data-omit-panel]');if(panel)panel.hidden=true;
+ }
+ if(p.type==='burger'){const panel=d.querySelector('[data-burger-extras]');if(panel)panel.hidden=true;const toggle=d.querySelector('[data-burger-toggle]');if(toggle){toggle.textContent='🥬 Ingredientes ▾';toggle.setAttribute('aria-expanded','false')}const all=d.querySelector('input[name="v-hamburguesa"][value="Con todo"]');if(all)all.checked=true;}
+ if(d.tagName==='DETAILS')d.open=false;
+ renderCart();toast('✅ Producto agregado al carrito')
+});
+function renderCart(){$('cart').innerHTML=cart.length?cart.map((p,i)=>`<div class="cartitem"><div><strong>${p.qty} × ${safe(p.name)}</strong><small>${safe(p.detail)}</small></div><div style="text-align:right"><strong>${money(p.qty*p.price)}</strong><br><button class="btn sec" type="button" data-remove="${i}">Eliminar</button></div></div>`).join(''):'<div class="empt">Aún no hay productos en el carrito</div>';$('total').textContent=money(cart.reduce((a,p)=>a+p.price*p.qty,0));$('send').disabled=!cart.length}
+$('cart').addEventListener('click',e=>{const b=e.target.closest('[data-remove]');if(!b)return;cart.splice(+b.dataset.remove,1);renderCart()});$('emptycart').onclick=()=>{cart=[];renderCart()};
+const states={nuevo:'🆕 Nuevo',aceptado:'✅ Aceptado',preparando:'⏳ En preparación',listo:'✅ Listo'};
+const typeLabel={mesa:'🍽️ Mesa',domicilio:'🛵 Domicilio',recoger:'🛍️ Pide y recoge'};
+function moneyFmt(n){return '$'+Number(n).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2})}
+const isDrink=p=>['Coca-Cola','Agua fresca','Agua','Refresco'].includes(p.name);
+const foodItems=o=>o.items.filter(p=>!isDrink(p));
+const drinkItems=o=>o.items.filter(isDrink);
+const groupItems=items=>{
+ const grouped=[];for(const item of items){
+  const same=grouped.find(x=>x.name===item.name&&x.detail===item.detail&&x.price===item.price);
+  if(same)same.qty+=item.qty;else grouped.push({...item});
+ }return grouped;
+};
+const mesaNum=()=>Number($('mesaSelect').value);
+const mesaLabel=o=>o.type==='mesa'?'🍽️ Mesa '+(o.table||1):typeLabel[o.type];
+const foodPending=o=>o.pendingFood!==undefined?o.pendingFood: (o.state!=='listo'?foodItems(o):[]);
+function appendMesa(items){
+ const table=mesaNum(),existing=orders.find(o=>o.type==='mesa'&&(o.table||1)===table&&!o.payment);
+ const extra=groupItems(items),newFoods=extra.filter(p=>!isDrink(p));
+ if(existing){
+  if(existing.billRequested){toast('⚠️ La cuenta ya fue solicitada. Registra el pago antes de iniciar otra cuenta.');return null}
+  existing.items=groupItems([...existing.items,...extra]);
+  existing.total=existing.items.reduce((a,p)=>a+p.qty*p.price,0);
+  if(newFoods.length){existing.pendingFood=groupItems([...(existing.pendingFood||[]),...newFoods]);existing.state='nuevo';existing.createdAt=new Date().toISOString();existing.readyAt=null}
+  persist();renderOrders();return {id:existing.id,updated:true};
+ }
+ const id=addOrder('mesa',extra);
+ const o=orders.find(x=>x.id===id);o.table=table;o.pendingFood=newFoods;persist();renderOrders();
+ return {id,updated:false};
+}
+
+function addOrder(type,items){
+ let id=seq++;
+ const hasFood=items.some(p=>!isDrink(p));
+ orders.push({id,type,items:groupItems(items),total:items.reduce((a,p)=>a+p.qty*p.price,0),
+ state:hasFood?'nuevo':'listo',billRequested:false,payment:null,printed:false,createdAt:new Date().toISOString(),readyAt:hasFood?null:new Date().toISOString(),
+ time:new Date().toLocaleTimeString('es-MX')});
+ persist();renderOrders();return id
+}
+function orderItems(o){return groupItems(o.items).map(p=>'<li><strong>'+p.qty+' × '+safe(p.name)+'</strong>'+(p.detail?' <span class="fine">'+safe(p.detail)+'</span>':'')+' — '+moneyFmt(p.qty*p.price)+'</li>').join('')}
+function orderCard(o,role){
+ const paid=!!o.payment;
+ const actions=role==='mesero'?(paid?'':o.billRequested?'<button class="btn green" data-pay="'+o.id+'">💰 Registrar pago</button>':'<button class="btn yellow" data-bill="'+o.id+'">🧾 Solicitar cuenta</button>'):
+ role==='cocina'?((o.state==='nuevo'?'<button class="btn green" data-accept="'+o.id+'">1 · Aceptar pedido</button>':o.state==='aceptado'?'<button class="btn green" data-prepare="'+o.id+'">2 · En preparación</button>':o.state==='preparando'?'<button class="btn green" data-ready="'+o.id+'">3 · Listo</button>':'')+(o.type!=='mesa'&&!o.printed?'<button class="btn muted" data-manual="'+o.id+'">🖨️ Imprimir (demo)</button>':'')):'';
+ if(role==='cocina'){
+   const foods=groupItems(foodPending(o));
+   return '<article class="kitchenCard '+o.type+'"><div class="rowline"><h3>#'+o.id+' · '+mesaLabel(o)+'</h3><span class="pill">'+states[o.state]+'</span></div><ul>'+
+   foods.map(p=>'<li><strong>'+p.qty+' × '+safe(p.name)+'</strong>'+(p.detail?' <span class="fine">'+safe(p.detail)+'</span>':'')+'</li>').join('')+
+   '</ul><div class="elapsed" data-order-clock="'+o.id+'" data-start="'+safe(o.createdAt||'')+'" data-end="'+safe(o.readyAt||'')+'">⏱ Calculando...</div><div class="actions">'+actions+'</div></article>';
+ }
+ return '<article class="order"><div class="rowline"><h3>#'+o.id+' · '+mesaLabel(o)+'</h3><span class="pill">'+(paid?'💰 Pagado':states[o.state])+'</span></div><ul>'+
+ orderItems(o)+'</ul><div class="amount">'+moneyFmt(o.total)+'</div><p class="fine">'+(paid?'Cobrado · '+o.payment.method:o.billRequested?'🧾 Cuenta solicitada':'⏳ Pendiente de cobro')+
+ '</p><div class="actions">'+actions+'</div></article>';
+}
+function renderOrders(){const mesa=orders.filter(o=>o.type==='mesa'&&(o.table||1)===mesaNum()),
+ active=orders.filter(o=>o.state!=='listo'&&foodPending(o).length),
+ done=orders.filter(o=>o.state==='listo'&&foodItems(o).length);
+ $('mesaOrders').innerHTML=mesa.filter(o=>!o.payment).length?mesa.filter(o=>!o.payment).slice().reverse().map(o=>orderCard(o,'mesero')).join(''):'<div class="empty">Sin cuentas pendientes de Mesa 1</div>';
+ $('waiterOrders').innerHTML=mesa.length?mesa.slice().reverse().map(o=>'<div class="cartitem"><div><strong>Pedido #'+o.id+'</strong><small>'+(o.payment?'💰 Cobrado':states[o.state])+'</small></div><strong>'+moneyFmt(o.total)+'</strong></div>').join(''):'<div class="empty">Todavía no hay pedidos de Mesa 1</div>';
+ $('waiterDrinks').innerHTML=mesa.filter(o=>!o.payment&&drinkItems(o).length).length?
+ mesa.filter(o=>!o.payment&&drinkItems(o).length).slice().reverse().map(o=>'<div class="cartitem"><div><strong>Pedido #'+o.id+'</strong><small>'+groupItems(drinkItems(o)).map(p=>p.qty+' × '+safe(p.name)+(p.detail?' · '+safe(p.detail):'')).join(' / ')+'</small></div><span class="pill">🥤 Mesero</span></div>').join(''):'<div class="empty">Sin bebidas pendientes</div>';
+ $('mesaStatus').textContent='Mesa '+mesaNum()+(mesa.some(o=>!o.payment)?' · Cuenta abierta':' · Disponible');
+ $('kitchenOrders').innerHTML=active.length?active.slice().reverse().map(o=>orderCard(o,'cocina')).join(''):'<div class="empty">Sin pedidos por preparar</div>';
+ $('attendedOrders').innerHTML=done.length?done.slice().reverse().map(o=>orderCard(o,'cocina')).join(''):'<div class="empty">Todavía no hay pedidos atendidos</div>';
+ $('kitchenCount').textContent=active.length+' activos';
+ const paid=orders.filter(o=>o.payment),due=orders.filter(o=>!o.payment);
+ const sum=arr=>arr.reduce((a,o)=>a+o.total,0);
+ $('paidTotal').textContent=moneyFmt(sum(paid));$('cashTotal').textContent=moneyFmt(sum(paid.filter(o=>o.payment.method==='Efectivo')));
+ $('transferTotal').textContent=moneyFmt(sum(paid.filter(o=>o.payment.method==='Transferencia')));$('pendingTotal').textContent=moneyFmt(sum(due));
+ $('salesMesa').textContent=moneyFmt(sum(paid.filter(o=>o.type==='mesa')));$('salesDelivery').textContent=moneyFmt(sum(paid.filter(o=>o.type==='domicilio')));$('salesPickup').textContent=moneyFmt(sum(paid.filter(o=>o.type==='recoger')));
+ $('salesHistory').innerHTML=orders.length?'<table class="table"><thead><tr><th>Pedido</th><th>Estado</th><th>Total</th></tr></thead><tbody>'+orders.slice().reverse().map(o=>'<tr><td>#'+o.id+' · '+mesaLabel(o)+'</td><td>'+(o.payment?'Cobrado · '+o.payment.method:'Pendiente')+'</td><td>'+moneyFmt(o.total)+'</td></tr>').join('')+'</tbody></table>':'<div class="empty">Todavía no hay ventas</div>';
+ renderCut();updateOrderTimers();}
+function updateOrderTimers(){
+ document.querySelectorAll('[data-order-clock]').forEach(el=>{
+ const start=Date.parse(el.dataset.start||'');if(!Number.isFinite(start)){el.textContent='⏱ Hora no disponible';return}
+ const end=Date.parse(el.dataset.end||'');const time=Number.isFinite(end)?end:Date.now();
+ const seconds=Math.max(0,Math.floor((time-start)/1000));
+ el.textContent='⏱ '+String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0')+' min';
+ });
+}
+setInterval(updateOrderTimers,1000);
+function renderCut(){let a=Number($('opening').value)||0;let cash=orders.filter(o=>o.payment&&o.payment.method==='Efectivo').reduce((v,o)=>v+o.total,0);$('cutInfo').textContent='Fondo inicial '+moneyFmt(a)+' + cobros en efectivo '+moneyFmt(cash)+' = efectivo esperado '+moneyFmt(a+cash)+'. Transferencias se contabilizan aparte.'}
+function showTicket(o){let text='HOT-DOG LAS VÍAS\nCUENTA PARA CLIENTE · DEMO\nMESA 1 · PEDIDO #'+o.id+'\n--------------------------\n';groupItems(o.items).forEach(p=>text+=p.qty+' × '+p.name+'  '+moneyFmt(p.price*p.qty)+'\n'+(p.detail?p.detail+'\n':''));text+='--------------------------\nTOTAL '+moneyFmt(o.total)+'\n\nGracias por su visita';$('ticketPreview').textContent=text;$('ticketDialog').hidden=false;}
+$('closeTicket').onclick=()=>$('ticketDialog').hidden=true;
+$('ticketDialog').addEventListener('click',e=>{if(e.target===$('ticketDialog'))$('ticketDialog').hidden=true});
+$('send').onclick=()=>{if(!cart.length)return;const hasFood=cart.some(p=>!isDrink(p));const result=appendMesa(cart);if(!result)return;cart=[];renderCart();toast(result.updated?'✅ Agregado al pedido #'+result.id+' de Mesa '+mesaNum()+(hasFood?' · Cocina recibió los nuevos alimentos':' · Bebidas para Mesero'):'✅ Pedido #'+result.id+' abierto en Mesa '+mesaNum()+(hasFood?' · Cocina avisada':' · Solo bebidas'));};
+$('mesaSelect').addEventListener('change',()=>{cart=[];renderCart();renderOrders()});
+document.addEventListener('click',e=>{const nav=e.target.closest('[data-view]');if(nav){const view=nav.dataset.view;document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));document.querySelectorAll('.view').forEach(p=>p.classList.toggle('active',p.id==='view-'+view));window.scrollTo({top:0,behavior:'smooth'});return}
+ const b=e.target.closest('button[data-accept],button[data-prepare],button[data-ready],button[data-bill],button[data-pay],button[data-manual]');if(!b)return;
+ const id=Number(b.dataset.accept||b.dataset.prepare||b.dataset.ready||b.dataset.bill||b.dataset.pay||b.dataset.manual),o=orders.find(x=>x.id===id);if(!o)return;
+ if(b.hasAttribute('data-accept')&&o.state==='nuevo'){o.state='aceptado';ring();toast('✅ Pedido #'+id+' aceptado · Mesero actualizado')}
+ if(b.hasAttribute('data-prepare')&&o.state==='aceptado'){o.state='preparando';ring();toast('👨‍🍳 Pedido #'+id+' en preparación · Mesero actualizado')}
+ if(b.hasAttribute('data-ready')&&o.state==='preparando'){o.state='listo';o.readyAt=new Date().toISOString();o.pendingFood=[];ring();toast('🔔 Pedido #'+id+' listo · Mesero actualizado (demo)')}
+ if(b.hasAttribute('data-bill')){if(o.billRequested)return;o.billRequested=true;showTicket(o);toast('🧾 Cuenta solicitada · Vista previa sin Epson')}
+ if(b.hasAttribute('data-manual')){o.printed=true;toast('🖨️ Impresión manual simulada · Sin Epson')}
+ if(b.hasAttribute('data-pay')){if(o.payment){toast('Esta cuenta ya está pagada');return}if(o.type==='mesa'&&!o.billRequested){toast('Solicita la cuenta antes de cobrar');return}const method=prompt('Forma de pago: escribe Efectivo o Transferencia','Efectivo');if(method===null)return;const m=method.trim().toLowerCase()==='efectivo'?'Efectivo':method.trim().toLowerCase()==='transferencia'?'Transferencia':null;if(!m){toast('Selecciona Efectivo o Transferencia');return}let cashReceived=null,change=null;if(m==='Efectivo'){const input=prompt('Total '+moneyFmt(o.total)+'\n¿Con cuánto efectivo paga el cliente?',String(o.total));if(input===null)return;cashReceived=Number(input);if(!Number.isFinite(cashReceived)||cashReceived<o.total){toast('Efectivo insuficiente');return}change=cashReceived-o.total;}if(!confirm('Confirmar cobro de '+moneyFmt(o.total)+' por '+m+'?'))return;o.payment={method:m,received:cashReceived,change};toast('✅ Pago registrado. '+(m==='Efectivo'?'Cambio: '+moneyFmt(change):'Transferencia'));}
+ persist();renderOrders();});
+$('opening').addEventListener('input',renderCut);
+$('newdelivery').onclick=()=>{addOrder('domicilio',[{name:'Hamburguesa',qty:1,price:70,detail:'Con todo'},{name:'Hotdog con papas',qty:1,price:50,detail:'Natural'}]);toast('🛵 Pedido ficticio creado')};
+$('newpickup').onclick=()=>{addOrder('recoger',[{name:'Orden de papas',qty:2,price:25,detail:'Natural'}]);toast('🛍️ Pedido ficticio creado')};
+$('downloadCsv').onclick=()=>{let rows=[['Pedido','Tipo','Productos','Total','Estado','Pago','Fecha']];orders.forEach(o=>rows.push([o.id,o.type,o.items.map(p=>p.qty+'x '+p.name).join('; '),o.total,o.payment?'Cobrado':'Pendiente',o.payment?.method||'',o.time]));const csv='\ufeff'+rows.map(row=>row.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\r\n');let blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ventas-demo-las-vias.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)};
+$('reset').onclick=()=>{if(!confirm('¿Borrar todos los datos de demostración de este navegador?'))return;orders=[];cart=[];seq=1;persist();renderCart();renderOrders();toast('Datos de demostración reiniciados')};
+$('sound').onclick=()=>{enable=!enable;$('sound').textContent=enable?'🔊 Alertas activas':'🔇 Alertas silenciadas';if(enable)ring()};
+renderCart();renderOrders();
+})();
+</script></body></html>
