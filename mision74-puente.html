@@ -1,0 +1,86 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Hot-Dog Las Vías · Misión 74</title><style>
+:root{font:16px system-ui,Arial,sans-serif;color-scheme:dark}*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{background:radial-gradient(ellipse at top,#1c405b,#061724 75%);margin:0;color:#eefbff}main{max-width:1460px;margin:auto;padding:clamp(12px,2vw,28px)}
+h1{color:#55dfff;font-size:clamp(27px,4vw,40px);margin:8px 0}h2{font-size:clamp(22px,2.6vw,29px);margin:8px 0 12px}h3{margin:16px 0 10px}p{line-height:1.5;color:#c6e3f0}
+.warning{background:#453317;border-left:5px solid #ffcb68;color:#ffefcf;padding:14px;border-radius:10px;margin:15px 0}.pill{font-weight:850;font-size:12px;background:#1e536c;padding:8px 12px;border-radius:99px;display:inline-block}
+.columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.panel{border:1px solid #397d98;border-radius:17px;background:#0c2b40;padding:17px;min-width:0}.waiter{border-color:#53c8ff}.kitchen{border-color:#4be3b1}.cash{border-color:#f2c16e}
+nav{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}a{color:#95eaff}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}label.field{display:grid;gap:6px;font-size:14px;font-weight:800}.wide{grid-column:1/-1}
+input,select,button{font:inherit;border-radius:10px;padding:11px;min-height:45px}input,select{color:#fff;background:#071c2c;border:1px solid #5698b4;width:100%;min-width:0}button{cursor:pointer;background:#40d7ed;color:#072536;border:1px solid #7bf3ff;font-weight:850}button.secondary{background:#23516b;color:#fff}button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ffe199;outline-offset:2px}
+.card{border-left:6px solid #52c8f8;border-radius:13px;background:#14394e;border-top:1px solid #437b95;border-right:1px solid #437b95;border-bottom:1px solid #437b95;padding:12px;margin:11px 0}.card[data-mesa="1"]{border-left-color:#4ce3f4}.card[data-mesa="2"]{border-left-color:#eeaa5a}
+.row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px}.line{border-bottom:1px solid #396276;padding:8px 0;font-size:14px}.small{font-size:13px;color:#bfdde9}.status{font-size:12px;color:#aef6d9}.timer{font-size:26px;color:#a1ffe1;font-weight:900;font-variant-numeric:tabular-nums}.total{font-size:28px;font-weight:900;color:#8cffe0}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.actions button{flex:1 1 140px}.notice{background:#19413e;border-radius:11px;color:#b9ffe6;padding:12px;margin:15px 0;min-height:46px}
+.burger{border:1px solid #4d8ba4;border-radius:10px;padding:12px;background:#10394e;display:grid;gap:9px}.check{display:flex;align-items:center;gap:9px;min-height:30px;font-weight:650}.check input{width:20px;height:20px;min-height:20px;accent-color:#50e0f5}
+[hidden]{display:none!important}
+@media(max-width:1090px){.columns{grid-template-columns:1fr 1fr}.cash{grid-column:1/-1}}@media(max-width:700px){.columns{grid-template-columns:1fr}.cash{grid-column:auto}.panel{padding:13px}.fields{grid-template-columns:1fr}.wide{grid-column:auto}}
+</style></head><body><main><span class="pill">🧪 MISIÓN 74 · PUENTE CORREGIDO</span><h1>🌭 Hot-Dog Las Vías</h1><p>Mesero, Cocina y Caja · bebidas separadas y personalización por producto.</p>
+<div class="warning"><strong>SIMULACIÓN AISLADA:</strong> no envía pedidos a Render, Netlify o Epson, ni realiza cobros, notificaciones o GPS. Toda la información se mantiene solo en esta pestaña y se borra al recargar.</div>
+<nav><a href="./mision73-puente.html">↩ Misión 73 anterior</a><a href="./mesero-v72.html">🍽️ Mesero #72</a><a href="./cocina-v67.html">👨‍🍳 Cocina #67</a><a href="./caja-v68.html">💰 Caja #68</a></nav>
+<div class="columns">
+<section class="panel waiter"><h2>🍽️ Mesero</h2><p>Las bebidas se anotan aquí y en la cuenta; no se envían a Cocina.</p>
+<div class="fields">
+<label class="field">Mesa<select id="mesa"><option value="1">Mesa 1</option><option value="2">Mesa 2</option></select></label>
+<label class="field">Cantidad<input id="qty" type="number" min="1" max="25" value="1"></label>
+<label class="field wide">Producto<select id="product"><option value="Hotdog sencillo|25">Hotdog sencillo · $25</option><option value="Hotdog con papas|50">Hotdog con papas · $50</option><option value="Combo 2 hotdogs|70">Combo 2 hotdogs · $70</option><option value="Hamburguesa|70">Hamburguesa · $70</option><option value="Salchipapas|50">Salchipapas · $50</option><option value="Orden de papas|25">Orden de papas · $25</option><option value="Agua fresca|30">Agua fresca · $30</option><option value="Coca-Cola|30">Coca-Cola · $30</option></select></label>
+<label class="field wide" id="detailWrap">Preparación o sabor<select id="detail"></select></label>
+<div id="burger" class="burger wide" hidden><label class="check"><input type="checkbox" id="all" checked> Con todo</label><button type="button" class="secondary" id="ingredients" aria-expanded="false">🥬 Ingredientes ▾</button><div id="exclusions" hidden></div></div>
+</div><p><button id="add">➕ Agregar a mesa ficticia</button></p><h3>🧾 Cuentas de mesas</h3><div id="waiterList"></div></section>
+<section class="panel kitchen"><h2>👨‍🍳 Cocina</h2><p>Solo alimentos: Aceptar → En preparación → Listo. Sin precios ni bebidas.</p><div id="kitchenList"></div></section>
+<section class="panel cash"><h2>💰 Caja</h2><div class="row"><div><div class="small">Cobrado (simulación)</div><div class="total" id="collected">$0.00</div></div><div><div class="small">Mesas cobradas</div><div class="total" id="paidCount">0</div></div></div><p>Cuenta completa de cada mesa, incluyendo bebidas. El botón simula el cobro; no imprime tickets.</p><div id="cashList"></div></section>
+</div><div class="notice" id="message" role="status" aria-live="polite">Selecciona productos de prueba para Mesa 1 o Mesa 2.</div><button class="secondary" id="reset">↻ Reiniciar demostración</button>
+</main><script>
+(()=>{'use strict';const $=id=>document.getElementById(id);
+const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','&#39;':'&#39;',"'":'&#39;'}[c]));
+const money=v=>'$'+v.toFixed(2),stages=['Nuevo','Aceptado','En preparación','Listo'];
+const drinks=new Set(['Agua fresca','Coca-Cola']);
+const prep={
+'Hotdog sencillo':['Con todo','Natural','Solo mayonesa','Solo salchicha','Solo tomate','Solo cebolla','Sin mostaza','Sin catsup','Sin cebolla'],
+'Hotdog con papas':['Con todo','Natural','Sin cebolla','Sin catsup','Sin mostaza'],
+'Combo 2 hotdogs':['Con todo','Natural','Sin cebolla'],
+'Salchipapas':['Con todo','Sin cebolla','Sin catsup','Sin mostaza'],
+'Orden de papas':['Normal','Sin catsup','Sin mostaza'],
+'Agua fresca':['Jamaica','Horchata','Piña','Cebada']};
+const excludes=['Sin cebolla','Sin tomate','Sin lechuga','Sin aderezo','Sin mayonesa'];
+$('exclusions').innerHTML=excludes.map(x=>'<label class="check"><input class="exclude" type="checkbox" value="'+x+'" disabled> '+x+'</label>').join('');
+let orders=[],nextId=301;
+const productName=()=>$('product').value.split('|')[0];
+function hideExclusions(){$('exclusions').hidden=true;$('ingredients').textContent='🥬 Ingredientes ▾';$('ingredients').setAttribute('aria-expanded','false')}
+function refreshProduct(){
+ const name=productName(),burger=name==='Hamburguesa',cola=name==='Coca-Cola';
+ $('detailWrap').hidden=burger||cola;$('burger').hidden=!burger;
+ if(burger){$('all').checked=true;document.querySelectorAll('.exclude').forEach(x=>{x.checked=false;x.disabled=true});hideExclusions()}
+ else $('detail').innerHTML=(prep[name]||[]).map(x=>'<option>'+x+'</option>').join('');
+}
+$('ingredients').onclick=()=>{const open=$('exclusions').hidden;$('exclusions').hidden=!open;$('ingredients').textContent=open?'🥬 Ocultar ingredientes ▴':'🥬 Ingredientes ▾';$('ingredients').setAttribute('aria-expanded',String(open));if(open){$('all').checked=false;document.querySelectorAll('.exclude').forEach(x=>x.disabled=false)}};
+$('all').onchange=()=>{if($('all').checked){document.querySelectorAll('.exclude').forEach(x=>{x.checked=false;x.disabled=true});hideExclusions()}else{$('exclusions').hidden=false;$('ingredients').textContent='🥬 Ocultar ingredientes ▴';$('ingredients').setAttribute('aria-expanded','true');document.querySelectorAll('.exclude').forEach(x=>x.disabled=false)}};
+$('product').onchange=refreshProduct;
+function details(name){if(name==='Coca-Cola')return '';if(name==='Hamburguesa'){if($('all').checked)return 'Con todo';return [...document.querySelectorAll('.exclude:checked')].map(x=>x.value).join(', ')||'Con todo'}return $('detail').value||''}
+function elapsed(o){const secs=Math.floor(((o.ready||Date.now())-o.created)/1000);return String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0')}
+function render(){
+ $('waiterList').innerHTML=[1,2].map(t=>{const arr=orders.filter(o=>o.table===t);
+ return '<div class="card" data-mesa="'+t+'"><div class="row"><b>Mesa '+t+'</b><span class="status">'+arr.length+' rondas</span></div><b>'+money(arr.reduce((a,o)=>a+o.price*o.qty,0))+'</b>'+
+ (arr.length?arr.map(o=>'<div class="line">#'+o.id+' · '+o.qty+' × '+esc(o.name)+(o.detail?' · '+esc(o.detail):'')+'<div class="status">'+(o.drink?'🥤 Bebida: Mesero':stages[o.state])+'</div></div>').join(''):'<p class="small">Sin pedidos aún</p>')+'</div>'}).join('');
+ const food=orders.filter(o=>!o.drink);
+ $('kitchenList').innerHTML=food.length?food.map(o=>'<div class="card" data-mesa="'+o.table+'"><div class="row"><b>#'+o.id+' · Mesa '+o.table+'</b><span class="status">'+stages[o.state]+'</span></div><div class="line">'+o.qty+' × '+esc(o.name)+'<div class="small">'+esc(o.detail)+'</div></div><div class="timer" data-time="'+o.id+'">'+elapsed(o)+' min</div>'+(o.state===3?'<p>✅ Listo</p>':'<div class="actions"><button data-next="'+o.id+'">'+['1 · Aceptar pedido','2 · En preparación','3 · Listo'][o.state]+'</button></div>')+'</div>').join(''):'<p class="small">Sin alimentos en Cocina. Bebidas permanecen con Mesero.</p>';
+ $('cashList').innerHTML=[1,2].map(t=>{const arr=orders.filter(o=>o.table===t),due=arr.filter(o=>!o.paid);
+ if(!arr.length)return '';
+ return '<div class="card" data-mesa="'+t+'"><div class="row"><b>Cuenta de Mesa '+t+'</b><b>'+money(arr.reduce((a,o)=>a+o.price*o.qty,0))+'</b></div>'+
+ arr.map(o=>'<div class="line">'+o.qty+' × '+esc(o.name)+' · '+money(o.qty*o.price)+'</div>').join('')+
+ '<p class="status">'+(due.length?'⏳ Pendiente: '+money(due.reduce((a,o)=>a+o.qty*o.price,0)):'✅ Cuenta cobrada')+'</p>'+
+ (due.length?'<div class="actions"><button data-pay="'+t+'" data-method="Efectivo">💵 Efectivo</button><button class="secondary" data-pay="'+t+'" data-method="Transferencia">💳 Transferencia</button></div>':'')+'</div>'}).join('')||'<p class="small">Sin cuentas en Caja.</p>';
+ $('collected').textContent=money(orders.filter(o=>o.paid).reduce((s,o)=>s+o.price*o.qty,0));
+ $('paidCount').textContent=[1,2].filter(t=>orders.some(o=>o.table===t)&&orders.filter(o=>o.table===t).every(o=>o.paid)).length;
+}
+$('add').onclick=()=>{
+ const table=Number($('mesa').value),qty=Number($('qty').value);if(![1,2].includes(table)||!Number.isInteger(qty)||qty<1||qty>25){$('message').textContent='Cantidad inválida; escribe de 1 a 25.';return}
+ const [name,p]=$('product').value.split('|'),drink=drinks.has(name),now=Date.now();
+ const o={id:nextId++,table,qty,name,price:Number(p),detail:details(name),drink,created:now,ready:drink?now:null,state:drink?3:0,paid:false};
+ orders.unshift(o);$('qty').value='1';
+ $('message').textContent=drink?'🥤 Bebida #'+o.id+' registrada en Mesero y Caja, sin enviar a Cocina.':'👨‍🍳 Alimento #'+o.id+' enviado a Cocina (solo simulación).';render();
+};
+document.addEventListener('click',e=>{
+ const next=e.target.closest('[data-next]'),pay=e.target.closest('[data-pay]');
+ if(next){const o=orders.find(x=>x.id===Number(next.dataset.next));if(!o||o.drink||o.state>=3)return;o.state++;if(o.state===3)o.ready=Date.now();$('message').textContent='Cocina: #'+o.id+' → '+stages[o.state];render()}
+ if(pay){const table=Number(pay.dataset.pay),method=pay.dataset.method;if(![1,2].includes(table)||!['Efectivo','Transferencia'].includes(method))return;const arr=orders.filter(o=>o.table===table&&!o.paid),amount=arr.reduce((s,o)=>s+o.price*o.qty,0);if(!arr.length||!confirm('¿Cobro FICTICIO de Mesa '+table+' por '+money(amount)+'?'))return;arr.forEach(o=>o.paid=true);$('message').textContent='💰 Mesa '+table+' cobrada en simulación por '+money(amount)+' ('+method+').';render()}
+});
+$('reset').onclick=()=>{if(!confirm('¿Reiniciar todas las pruebas?'))return;orders=[];nextId=301;$('message').textContent='Simulación reiniciada.';render()};
+setInterval(()=>{document.querySelectorAll('[data-time]').forEach(el=>{const o=orders.find(x=>x.id===Number(el.dataset.time));if(o)el.textContent=elapsed(o)+' min'})},1000);refreshProduct();render();
+})();</script></body></html>
